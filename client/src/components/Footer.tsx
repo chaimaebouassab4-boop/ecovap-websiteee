@@ -11,9 +11,9 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { icon: SiFacebook, href: "#", label: "Facebook" },
-  { icon: SiInstagram, href: "#", label: "Instagram" },
-  { icon: SiWhatsapp, href: "#", label: "WhatsApp" },
+  { icon: SiFacebook, href: "https://web.facebook.com/profile.php?id=61564083751443&_rdc=1&_rdr#", label: "Facebook" },
+  { icon: SiInstagram, href: "https://www.instagram.com/ecovap.tanger/", label: "Instagram" },
+  { icon: SiWhatsapp, href: "https://wa.me/212657387660", label: "WhatsApp" },
 ];
 
 export default function Footer() {
@@ -27,7 +27,7 @@ export default function Footer() {
                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary">
                   <Droplets className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <span className="text-xl font-bold text-white">BioNVap</span>
+                <span className="text-xl font-bold text-white">EcoVap</span>
               </Link>
               <p className="text-sm text-gray-400 mb-4">
                 Société de Nettoyage, Désinfection et Désinsectisation à Tanger. 
@@ -74,13 +74,13 @@ export default function Footer() {
                 <li className="flex items-start gap-3">
                   <Phone className="w-4 h-4 text-primary mt-1 shrink-0" aria-hidden="true" />
                   <a href="tel:+212600000000" className="text-sm text-gray-400 hover:text-primary transition-colors" data-testid="link-phone">
-                    +212 6 00 00 00 00
+                    +212 657 38 76 60
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
                   <Mail className="w-4 h-4 text-primary mt-1 shrink-0" aria-hidden="true" />
-                  <a href="mailto:contact@bionvap.ma" className="text-sm text-gray-400 hover:text-primary transition-colors" data-testid="link-email">
-                    contact@bionvap.ma
+                  <a href="mailto:contact@ecovap.ma" className="text-sm text-gray-400 hover:text-primary transition-colors" data-testid="link-email">
+                    okhammani@gmail.com
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
@@ -112,7 +112,7 @@ export default function Footer() {
 
         <div className="py-6 border-t border-gray-800">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            <p>&copy; {new Date().getFullYear()} BioNVap. Tous droits réservés.</p>
+            <p>&copy; {new Date().getFullYear()} EcoVap. Tous droits réservés.</p>
             <div className="flex items-center gap-4">
               <Link href="#" className="hover:text-primary transition-colors" data-testid="link-privacy">
                 Politique de confidentialité

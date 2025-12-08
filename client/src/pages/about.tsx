@@ -10,7 +10,7 @@ export default function About() {
       <Header />
       <main className="flex-1">
         <PageHeader
-          title="À Propos de BioNVap"
+          title="À Propos de EcoVap"
           description="Découvrez notre mission, notre technologie innovante et notre engagement pour un nettoyage écologique."
         />
         <section className="py-16 lg:py-24">

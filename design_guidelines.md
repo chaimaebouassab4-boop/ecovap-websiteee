@@ -1,4 +1,4 @@
-# BioNVap Design Guidelines
+# EcoVap Design Guidelines
 
 ## Design Approach
 **Professional Blue Hygienic Theme** - Clean, modern, trust-building aesthetic inspired by medical-grade hygiene and eco-friendly technology. Reference: Stripe's clarity + Apple's minimalism with healthcare precision.
@@ -47,7 +47,7 @@
 - Large card format with list of services
 - Icon headers for each category
 
-**Why Choose BioNVap:** 3-column benefit cards
+**Why Choose EcoVap:** 3-column benefit cards
 - Eco-friendly focus, Innovation, Quality certification
 - Include trust indicators (AFNOR compliance badge)
 

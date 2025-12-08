@@ -10,7 +10,7 @@ export default function CTASection() {
           Prêt pour un Environnement Plus Sain ?
         </h2>
         <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-          Contactez BioNVap dès aujourd'hui pour un devis gratuit. 
+          Contactez EcoVap dès aujourd'hui pour un devis gratuit. 
           Notre équipe est à votre écoute pour répondre à tous vos besoins de nettoyage et désinfection.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
@@ -20,10 +20,10 @@ export default function CTASection() {
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
-          <a href="tel:+212600000000">
+          <a href="tel:0657-387660">
             <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/30 text-primary-foreground" data-testid="button-cta-phone">
               <Phone className="w-4 h-4 mr-2" />
-              +212 6 00 00 00 00
+              06 57 38 76 60
             </Button>
           </a>
         </div>

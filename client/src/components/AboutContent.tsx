@@ -44,7 +44,7 @@ export default function AboutContent() {
             Qui Sommes-Nous ?
           </h2>
           <p className="text-lg text-muted-foreground mb-4">
-            BioNVap est une entreprise spécialisée dans le nettoyage, la désinfection 
+            EcoVap est une entreprise spécialisée dans le nettoyage, la désinfection 
             et la désinsectisation à Tanger. Nous sommes pionniers dans l'utilisation 
             de la technologie de vapeur sèche au Maroc.
           </p>
@@ -71,7 +71,7 @@ export default function AboutContent() {
           <div className="aspect-[4/3] rounded-xl overflow-hidden">
             <img
               src={residentialImage}
-              alt="Service de nettoyage résidentiel BioNVap"
+              alt="Service de nettoyage résidentiel EcoVap"
               className="w-full h-full object-cover"
             />
           </div>
@@ -123,7 +123,7 @@ export default function AboutContent() {
           <div className="aspect-[4/3] rounded-xl overflow-hidden">
             <img
               src={steamImage}
-              alt="Technologie de vapeur sèche BioNVap"
+              alt="Technologie de vapeur sèche EcoVap"
               className="w-full h-full object-cover"
             />
           </div>

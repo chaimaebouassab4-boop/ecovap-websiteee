@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
             <div className="aspect-[4/3] rounded-xl overflow-hidden">
               <img
                 src={steamImage}
-                alt="Technologie de nettoyage à vapeur sèche BioNVap"
+                alt="Technologie de nettoyage à vapeur sèche EcoVap"
                 className="w-full h-full object-cover"
               />
             </div>

@@ -36,7 +36,7 @@ export default function Hero() {
           </p>
 
           <p className="text-base text-gray-300 mb-8 max-w-xl">
-            BioNVap, votre partenaire de confiance pour un nettoyage professionnel 
+            EcoVap, votre partenaire de confiance pour un nettoyage professionnel 
             et une désinfection innovante à Tanger. Élimine 100% des bactéries, 
             acariens et parasites, y compris le COVID-19.
           </p>
