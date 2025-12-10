@@ -5,10 +5,16 @@ import ServicesPreview from "@/components/ServicesPreview";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="min-h-screen flex flex-col"
+    >
       <Header />
       <main className="flex-1">
         <Hero />
@@ -18,6 +24,6 @@ export default function Home() {
         <CTASection />
       </main>
       <Footer />
-    </div>
+    </motion.div>
   );
 }
