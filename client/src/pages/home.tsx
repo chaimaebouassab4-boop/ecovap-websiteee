@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import ServicesPreview from "@/components/ServicesPreview";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -21,6 +22,7 @@ export default function Home() {
         <Features />
         <ServicesPreview />
         <WhyChooseUs />
+        <Testimonials />
         <CTASection />
       </main>
       <Footer />
