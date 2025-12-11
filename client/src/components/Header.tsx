@@ -49,15 +49,6 @@ export default function Header() {
     // Si on est sur la page d'accueil
     if (location === '/') {
       // Scroll direct vers la section témoignages
-      const element = document.getElementById('temoignages');
-      if (element) {
-        const yOffset = -80;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    } else {
-      // Naviguer vers l'accueil puis scroll
-      setLocation('/');
       setTimeout(() => {
         const element = document.getElementById('temoignages');
         if (element) {
@@ -65,7 +56,34 @@ export default function Header() {
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }
-      }, 100);
+      }, 50);
+    } else {
+      // Naviguer vers l'accueil puis scroll
+      setLocation('/');
+      // Utiliser plusieurs tentatives pour s'assurer que l'élément est chargé
+      const scrollToTestimonials = () => {
+        const element = document.getElementById('temoignages');
+        if (element) {
+          const yOffset = -80;
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          return true;
+        }
+        return false;
+      };
+      
+      // Première tentative après 200ms
+      setTimeout(() => {
+        if (!scrollToTestimonials()) {
+          // Deuxième tentative après 500ms si la première échoue
+          setTimeout(() => {
+            if (!scrollToTestimonials()) {
+              // Troisième tentative après 1000ms
+              setTimeout(scrollToTestimonials, 1000);
+            }
+          }, 500);
+        }
+      }, 200);
     }
   };
 
@@ -147,7 +165,9 @@ export default function Header() {
             </a>
               
             <Link href="/contact">
-              <Button data-testid="button-header-contact">
+              <Button data-testid="button-header-contact"
+              className="bg-gradient-to-r from-green-500 to-blue-600 text-white border-none hover:from-green-600 hover:to-blue-700 transition-all duration-300"
+              >
                 Contactez-nous
               </Button>
             </Link>
