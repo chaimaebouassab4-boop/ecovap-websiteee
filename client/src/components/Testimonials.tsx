@@ -20,62 +20,120 @@ interface Testimonial {
 const testimonialsData: Testimonial[] = [
   {
     id: 1,
-    name: "Marie L.",
+    name: "Khadija Elbakkal",
     location: "Casablanca",
     service: "Nettoyage de Canapé",
     rating: 5,
-    comment: "Service exceptionnel ! Mon canapé est comme neuf. L'équipe était professionnelle et ponctuelle. Je recommande vivement EcoVap !",
-    image: "/testimonials/capture1.jpg",
-    avatar: "/avatars/marie.jpg",
-    date: "Il y a 2 semaines",
+    comment: "Honestly, I’m impressed by their work! My sofas, mattresses, and carpets look completely renewed after the steam cleaning. Everything feels fresh and comfortable again. The team was on time, respectful, and very detail-oriented. I’ll definitely call them again and recommend them to others!",
+    image: "/testimonials/khadija.png",
+    avatar: "/testimonials/avav.png",
+    date: "Il y a un mois",
     verified: true
   },
   {
     id: 2,
-    name: "Ahmed B.",
+    name: "Oumaima Elhadi",
     location: "Rabat",
-    service: "Nettoyage Intérieur Véhicule",
+    service: "Nettoyage Matelas",
     rating: 5,
-    comment: "Incroyable ! Ma voiture sent le neuf et tous les sièges sont impeccables. Le processus à la vapeur sèche est vraiment efficace.",
-    image: "/testimonials/capture2.jpg",
-    avatar: "/avatars/ahmed.jpg",
+    comment: "We are a hotel company, we called them for our sofas, and mattresses. They handled a great quantity with efficiency and professional care. They also offer steam cleaning for all of our rooms. We do thank Mr Ousama for his professional services. We highly recommend.Once again, Thank you very much.",
+    image: "/testimonials/oumm.png",
+    avatar: "/testimonials/avav.png",
     date: "Il y a 1 mois",
     verified: true
   },
   {
     id: 3,
-    name: "Fatima Z.",
+    name: "MaKika Mb",
     location: "Marrakech",
-    service: "Nettoyage de Matelas",
+    service: "Nettoyage de Canapés",
     rating: 5,
-    comment: "Je suis allergique aux acariens et depuis le traitement, je dors beaucoup mieux. Service professionnel et résultats visibles !",
-    image: "/testimonials/capture3.jpg",
-    avatar: "/avatars/fatima.jpg",
-    date: "Il y a 3 semaines",
+    comment: "Professional team. They strictly adhered to the cleaning schedule for my sofa. As for the service, there's nothing to complain about; we got the sofa back to its original color, especially with the kids. Otherwise, I'm already thinking about our next appointment next year, insha'Allah.I'm so grateful to the owner and his team.",
+    image: "/testimonials/maki.png",
+    avatar: "/testimonials/avav.png",
+    date: "Il y a 2 mois",
     verified: true
   },
   {
     id: 4,
-    name: "Youssef K.",
+    name: "Yassin mazid",
     location: "Tanger",
-    service: "Nettoyage de Tapis",
+    service: "Nettoyage de Matelas",
     rating: 5,
-    comment: "Mes tapis persans ont retrouvé leurs couleurs d'origine. L'équipe a pris grand soin de mes biens. Excellent travail !",
-    image: "/testimonials/capture4.jpg",
-    avatar: "/avatars/youssef.jpg",
-    date: "Il y a 5 jours",
+    comment: "Quick, efficient, and friendly service. My sofa is spotless, thanks EcoVap. The team arrived on time and worked diligently. I highly recommend their steam cleaning service for anyone looking to refresh their furniture.",
+    image: "/testimonials/yaya.png",
+    avatar: "/testimonials/avav.png",
+    date: "Il y a un mois",
     verified: true
   },
   {
     id: 5,
-    name: "Sarah M.",
-    location: "Fès",
-    service: "Nettoyage de Canapé",
+    name: "Tuflach Hamza",
+    location: "Tanger",
+    service: "Nettoyage de Canapé et Matelas",
     rating: 5,
-    comment: "Des taches impossibles ont disparu comme par magie ! Le service client est aussi excellent que le nettoyage. Merci EcoVap !",
-    image: "/testimonials/capture5.jpg",
-    avatar: "/avatars/sarah.jpg",
-    date: "Il y a 2 mois",
+    comment: "Service impeccable. Je recommande vivement. Ponctuels et très professionnels. Ils ont nettoyé mon canapé et mon matelas à la vapeur avec un résultat parfait.!",
+    image: "/testimonials/haha.png",
+    avatar: "/testimonials/avav.png",
+    date: "Il y a 1 mois",
+    verified: true
+  },
+    {
+    id: 6,
+    name: "Malak Touihar",
+    location: "Tanger",
+    service: "Nettoyage de Canapé et Matelas",
+    rating: 5,
+    comment: "Service impeccable. Je recommande vivement. Ponctuels et très professionnels. Ils ont nettoyé mon canapé et mon matelas à la vapeur avec un résultat parfait.!",
+    image: "/testimonials/avis2.jpg",
+    avatar: "/testimonials/avav.png",
+    date: "Il y a 7 semaines",
+    verified: true
+  }, {
+    id: 7,
+    name: "CASA DOS MARES",
+    location: "Tanger",
+    service: "Nettoyage de Canapé et Matelas",
+    rating: 5,
+    comment: "We are an apartment hotel and hired this company for the cleaning of our sofas. The work was carried out with seriousness and professionalism. The results are impeccable, and we are fully satisfied with their services. We highly recommend them!",
+    image: "/testimonials/avav.png",
+    avatar: "/avatars/MALAK.jpg",
+    date: "Il y a 7 semaines",
+    verified: true
+  },{
+    id: 8,
+    name: "Fathia chentouf",
+    location: "Tanger",
+    service: "Nettoyage de Canapé et Matelas",
+    rating: 5,
+    comment: "Hello Sirs, I would like to thank you for the quality and efficiency of your cleaning service. We are very satisfied. See you next time. Thank you very much and good luck.",
+    image: "/testimonials/avis 4.jpg",
+    avatar: "/testimonials/avav.png",
+    date: "Il y a 6 semaines",
+    verified: true
+  },
+  {
+    id: 9,
+    name: "dexter",
+    location: "Tanger",
+    service: "Nettoyage de Canapé et Matelas",
+    rating: 5,
+    comment: "The steam cleaning of my sofas and mattress has given my living room a new lease on lifeThank you very much and good luck.",
+    image: "/testimonials/dex.jpg",
+    avatar: "/testimonials/avav.png",
+    date: "Il y a 1 mois",
+    verified: true
+  },
+   {
+    id: 10,
+    name: "Houssam Nadour",
+    location: "Tanger",
+    service: "Nettoyage de Canapé et Matelas",
+    rating: 5,
+    comment: "EcoVap a dépassé mes attentes ! Professionnel, fiable et d’excellents résultats. Je recommande vivement !",
+    image: "/testimonials/hoho.jpg",
+    avatar: "/testimonials/avav.png",
+    date: "Il y a 1 mois",
     verified: true
   }
 ];
@@ -212,26 +270,26 @@ export default function Testimonials() {
                     )}
                   </div>
 
-                  {/* Partie droite - Image/Capture */}
-                  <div className="relative h-full min-h-[400px] bg-gradient-to-br from-blue-100 to-green-100">
-                    {testimonialsData[currentIndex].image ? (
-                      <img 
-                        src={testimonialsData[currentIndex].image}
-                        alt={`Témoignage ${testimonialsData[currentIndex].name}`}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="flex items-center justify-center h-full">
-                        <div className="text-center p-8">
-                          <MessageCircle className="w-24 h-24 text-blue-300 mx-auto mb-4" />
-                          <p className="text-gray-600">Capture d'écran du témoignage</p>
-                        </div>
-                      </div>
-                    )}
-                    
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                  </div>
+                 {/* Partie droite - Image/Capture */}
+<div className="relative h-full min-h-[400px] bg-gradient-to-br from-blue-100 to-green-100 flex items-center justify-center">
+  {testimonialsData[currentIndex].image ? (
+    <img 
+      src={testimonialsData[currentIndex].image}
+      alt={`Témoignage ${testimonialsData[currentIndex].name}`}
+      className="w-11/12 h-11/12 object-cover rounded-lg"
+    />
+  ) : (
+    <div className="flex items-center justify-center h-full">
+      <div className="text-center p-8">
+        <MessageCircle className="w-24 h-24 text-blue-300 mx-auto mb-4" />
+        <p className="text-gray-600">Capture d'écran du témoignage</p>
+      </div>
+    </div>
+  )}
+  
+  {/* Overlay gradient */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+</div>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -283,7 +341,7 @@ export default function Testimonials() {
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonialsData.slice(0, 3).map((testimonial, index) => (
+            {testimonialsData.slice(7, 10).map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
                 initial={{ opacity: 0, y: 20 }}
