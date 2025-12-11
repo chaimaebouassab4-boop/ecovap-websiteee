@@ -181,6 +181,85 @@ export default function Testimonials() {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Clients Populaires */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-20"
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+              Nos Clients de Confiance
+            </h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Des entreprises prestigieuses qui nous font confiance pour leurs besoins en nettoyage et désinfection
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-10">
+            {[
+              {
+                name: "Ibn Batouta",
+                category: "Café & Restaurant",
+                logo: "/testimonials/backg ibn batt.png"
+              },
+              {
+                name: "Essaadi",
+                category: "Hôtel",
+                logo: "/testimonials/background saadi.png"
+              },
+              {
+                name: "Centrico",
+                category: "Luxury Living",
+                logo: "/testimonials/background centrico.png"
+              },
+              {
+                name: "Marina Bay",
+                category: "By Clum",
+                logo: "/testimonials/background marina.png"
+              }
+            ].map((client, index) => (
+              <motion.div
+                key={client.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group relative"
+              >
+                <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center justify-center min-h-[180px] border border-gray-100">
+                  <div className="relative w-full h-32 flex items-center justify-center mb-4">
+                    <img
+                      src={client.logo}
+                      alt={`Logo ${client.name}`}
+                      className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-900/90 to-transparent rounded-b-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h4 className="text-white font-semibold text-sm text-center mb-1">
+                      {client.name}
+                    </h4>
+                    <p className="text-gray-300 text-xs text-center">
+                      {client.category}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-green-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              Devenir Client
+            </a>
+          </div>
+        </motion.div>
+
         {/* En-tête de section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

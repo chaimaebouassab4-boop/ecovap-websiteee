@@ -12,6 +12,7 @@ export default function About() {
         <PageHeader
           title="À Propos de EcoVap"
           description="Découvrez notre mission, notre technologie innovante et notre engagement pour un nettoyage écologique."
+          backgroundImage="/testimonials/mmmmmmmmm.jpg"
         />
         <section className="py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -24,3 +25,4 @@ export default function About() {
     </div>
   );
 }
+

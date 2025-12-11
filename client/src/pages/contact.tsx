@@ -1,9 +1,16 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 export default function Contact() {
+  // Précharger l'image de fond
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/testimonials/servvvvv.jpg";
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -11,6 +18,7 @@ export default function Contact() {
         <PageHeader
           title="Contactez-nous"
           description="Nous sommes à votre écoute. Demandez un devis gratuit ou posez-nous vos questions."
+          backgroundImage="/testimonials/servvvvv.jpg"
         />
         <section className="py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
