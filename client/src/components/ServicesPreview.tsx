@@ -6,27 +6,32 @@ import { Home, Building2, Check, ArrowRight } from "lucide-react";
 const serviceCategories = [
   {
     icon: Home,
-    title: "Services à Domicile",
-    description: "Nettoyage professionnel pour votre maison",
-    services: [
-      "Nettoyage maisons, villas, appartements",
-      "Désinfection vapeur sèche",
-      "Traitement anti-acariens",
-      "Traitement anti-parasites",
-      "Nettoyage matelas et canapés",
-    ],
+title: "Services à Domicile",
+description: "Nettoyage, désinfection et traitement anti-nuisibles pour votre maison",
+services: [
+  "Nettoyage de canapés à la vapeur sèche (désinfection, anti-acariens, séchage rapide)",
+  "Nettoyage et désinfection des matelas (bactéries, odeurs, acariens)",
+  "Nettoyage en profondeur des tapis et moquettes",
+  "Nettoyage intérieur des sièges de voiture (tissu et cuir)",
+  "Traitement anti-acariens, anti-bactéries et anti-virus",
+  "Nettoyage professionnel des vitres et surfaces vitrées",
+],
+
   },
   {
     icon: Building2,
-    title: "Services pour Entreprises",
-    description: "Solutions adaptées aux professionnels",
-    services: [
-      "Bureaux et showrooms",
-      "Usines et ateliers",
-      "Dépôts et entrepôts",
-      "Chantiers de construction",
-      "Surfaces industrielles",
-    ],
+   title: "Services Spéciaux Hôtels & Restaurants",
+description: "Prestations adaptées au secteur CHR",
+services: [
+  "Nettoyage et désinfection de canapés, fauteuils et banquettes",
+  "Nettoyage de tapis, moquettes et chaises",
+    "Nettoyage des fenêtres, baies vitrées et façades vitrées",
+  "Nettoyage des chambres et espaces communs",
+  "Désinfection vapeur des cuisines, salles de réception et sanitaires",
+  "Interventions rapides avec séchage immédiat",
+  "Service fiable, discret et conforme aux standards d’hygiène",
+],
+
   },
 ];
 

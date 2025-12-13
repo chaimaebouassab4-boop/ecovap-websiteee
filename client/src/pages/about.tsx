@@ -11,8 +11,8 @@ export default function About() {
       <main className="flex-1">
         <PageHeader
           title="À Propos de EcoVap"
-          description="Découvrez notre mission, notre technologie innovante et notre engagement pour un nettoyage écologique."
-          backgroundImage="/testimonials/mmmmmmmmm.jpg"
+           description="Découvrez notre mission, notre technologie innovante et notre engagement pour un nettoyage écologique."
+          backgroundImage="/testimonials/vitre2.jpg"
         />
         <section className="py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
