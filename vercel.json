@@ -1,21 +1,7 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
+  "outputDirectory": "client/dist",
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Content-Security-Policy",
-          "value": "upgrade-insecure-requests"
-        }
-      ]
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
