@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Shield, Leaf } from "lucide-react";
-import heroImage from "@assets/generated_images/office_steam_cleaning_scene.png";
+const heroImage = "/attached_assets/generated_images/office_steam_cleaning_scene.png";
 
 export default function Hero() {
   return (

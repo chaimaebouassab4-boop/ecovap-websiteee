@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Leaf, Sparkles, ShieldCheck } from "lucide-react";
-import steamImage from "@assets/generated_images/steam_cleaning_technology_closeup.png";
+const steamImage = "/attached_assets/generated_images/steam_cleaning_technology_closeup.png";
 
 const benefits = [
   {

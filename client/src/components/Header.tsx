@@ -122,7 +122,7 @@ export default function Header() {
   <div className="relative">
 <div></div>  
 
-  <img src="/EcoVapLoGo.png" alt="EcoVap Logo"
+  <img src="/attached_assets/EcoVapLoGo.png" alt="EcoVap Logo"
    className="w-40 h-40 md:w-56 md:h-56 object-contain relative z-10">
   </img>
   </div>
