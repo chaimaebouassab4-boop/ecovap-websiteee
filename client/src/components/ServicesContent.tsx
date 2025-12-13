@@ -17,6 +17,10 @@ import {
   Wind,
   ArrowRight,
   Check,
+  Shield,
+  Store,
+  Star,
+  
 } from "lucide-react";
 
 const homeServices = [
@@ -32,6 +36,7 @@ const homeServices = [
       "Nettoyage des vitres et miroirs",
     ],
   },
+  
   {
     icon: BedDouble,
     title: "Matelas & Literie",
@@ -44,6 +49,18 @@ const homeServices = [
       "Séchage rapide (40 minutes)",
     ],
   },
+  {
+  icon: Building2, // ou Sparkles, Building2
+  title: "Nettoyage Complet de Maison",
+  description: "Service complet de nettoyage en profondeur avec une équipe de femmes de ménage professionnelles",
+  image: "/services/menage 4.jpg", // Ajustez selon votre image
+  features: [
+    "Équipe professionnelle qualifiée",
+    "Cuisine, salles de bain, vitres, sols",
+    "Meubles, électroménagers, terrasses",
+    "Idéal pour déménagements et rénovations",
+  ],
+},
   {
     icon: Sofa,
     title: "Canapés & Textiles",
@@ -81,7 +98,7 @@ const homeServices = [
     ],
   },
   {
-    icon: Wind,
+    icon: Shield,
     title: "Traitement Anti-Acariens",
     description: "Solution contre les allergies",
     image: "/services/action.jpg",
@@ -92,6 +109,20 @@ const homeServices = [
       "Résultat durable",
     ],
   },
+
+  {
+    icon: Sparkles,
+    title: "Nettoyage des Vitres",
+    description: "Nettoyage professionnel des surfaces vitrées",
+    image: "/services/vitre1.jpg",
+    features: [
+     "Vitres, fenêtres, baies vitrées",
+    "Miroirs et surfaces réfléchissantes",
+    "Résultat brillant sans traces",
+    "Produits professionnels",
+    ],
+  },
+
 ];
 
 const businessServices = [
@@ -107,6 +138,34 @@ const businessServices = [
       "Mobilier de bureau",
     ],
   },
+  {
+  icon: Star, // ou Building, Star
+  title: "Services Spéciaux pour Hôtels",
+  description: "Solution complète pour l'hôtellerie",
+  image: "/services/hoeeeeeeeee.png",
+  features: [
+    "Nettoyage de tapis, moquettes et chaises",
+    "Chambres et espaces communs",
+    "Désinfection vapeur des cuisines et sanitaires",
+    "Interventions rapides avec séchage immédiat",
+    "Service discret conforme aux standards d'hygiène",
+  ],
+  category: "entreprise"
+},
+
+{
+  icon: Store, 
+  title: "Nettoyage de Vitrines Commerciales",
+  description: "Nettoyage pour grands magasins",
+  image: "/services/vitre2.jpg",
+  features: [
+    "Magasins de meubles et automobiles",
+    "Vitrines et baies vitrées grand format",
+    "Équipements et showrooms",
+    "Résultat brillant sans traces",
+  ],
+},
+
   {
     icon: Utensils,
     title: "Restaurants & Cuisines",

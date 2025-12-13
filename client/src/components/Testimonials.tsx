@@ -96,8 +96,8 @@ const testimonialsData: Testimonial[] = [
     service: "Nettoyage de Canapé et Matelas",
     rating: 5,
     comment: "We are an apartment hotel and hired this company for the cleaning of our sofas. The work was carried out with seriousness and professionalism. The results are impeccable, and we are fully satisfied with their services. We highly recommend them!",
-    image: "/testimonials/avav.png",
-    avatar: "/avatars/MALAK.jpg",
+    image: "/testimonials/avis3.jpg",
+    avatar: "/testimonials/avav.png",
     date: "Il y a 7 semaines",
     verified: true
   },{
@@ -119,7 +119,7 @@ const testimonialsData: Testimonial[] = [
     service: "Nettoyage de Canapé et Matelas",
     rating: 5,
     comment: "The steam cleaning of my sofas and mattress has given my living room a new lease on lifeThank you very much and good luck.",
-    image: "/testimonials/dex.jpg",
+    image: "/testimonials/dex.png",
     avatar: "/testimonials/avav.png",
     date: "Il y a 1 mois",
     verified: true
@@ -131,7 +131,7 @@ const testimonialsData: Testimonial[] = [
     service: "Nettoyage de Canapé et Matelas",
     rating: 5,
     comment: "EcoVap a dépassé mes attentes ! Professionnel, fiable et d’excellents résultats. Je recommande vivement !",
-    image: "/testimonials/hoho.jpg",
+    image: "/testimonials/hoho.png",
     avatar: "/testimonials/avav.png",
     date: "Il y a 1 mois",
     verified: true
