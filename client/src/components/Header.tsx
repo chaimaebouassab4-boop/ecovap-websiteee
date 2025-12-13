@@ -118,22 +118,20 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group" data-testid="link-logo">
-            <div className="relative">
-              <div className="absolute inset-0 bg-[#2596be] rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
-              <img 
-                src="/EcoVapLoGo.png" 
-                alt="EcoVap Logo" 
-                className="w-12 h-12 object-contain relative z-10"
-              />
-            </div>
-            <div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-[#011f4b] to-[#005b96] bg-clip-text text-transparent">
-                EcoVap
-              </span>
-              <p className="text-xs text-[#6497b1] -mt-1">Nettoyage Écologique</p>
-            </div>
-          </Link>
+         <Link href="/" className="flex items-center gap-3 group" data-testid="link-logo">
+  <div className="relative">
+<div></div>  
+
+  <img src="/EcoVapLoGo.png" alt="EcoVap Logo"
+   className="w-40 h-40 md:w-56 md:h-56 object-contain relative z-10">
+  </img>
+  </div>
+  <div>
+    <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#011f4b] to-[#005b96] bg-clip-text text-transparent">
+      EcoVap
+    </span>
+  </div>
+</Link>
 
           {/* Navigation principale */}
           <nav className="hidden lg:flex items-center gap-2" aria-label="Navigation principale">
