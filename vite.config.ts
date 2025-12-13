@@ -30,16 +30,11 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
-    assetsInlineLimit: 0, // Don't inline assets, copy them as files
   },
-  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg', '**/*.webp'],
   server: {
     fs: {
-      strict: false, // Changed from true to allow access to attached_assets
-      allow: [
-        path.resolve(import.meta.dirname, "client"),
-        path.resolve(import.meta.dirname, "attached_assets"),
-      ],
+      strict: true,
+      deny: ["**/.*"],
     },
   },
 });
