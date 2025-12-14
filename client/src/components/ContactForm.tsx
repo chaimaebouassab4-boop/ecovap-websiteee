@@ -170,8 +170,8 @@ okhammani@gmail.com
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Horaires</p>
-                  <p className="text-muted-foreground">Lun - Ven: 8h00 - 18h00</p>
-                  <p className="text-muted-foreground">Sam: 9h00 - 14h00</p>
+                  <p className="text-muted-foreground">Lun - Ven: 8h00 - 22h00</p>
+                  <p className="text-muted-foreground">Sam - Dim: 8h00 - 22h00</p>
                 </div>
               </li>
             </ul>
