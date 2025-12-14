@@ -127,8 +127,8 @@ function BeforeAfter() {
     setIsDragging((prev) => ({ ...prev, [index]: false }));
   };
 
-  const filteredExamples = activeFilter === "all" 
-    ? beforeAfterExamples 
+  const filteredExamples = activeFilter === "all"
+    ? beforeAfterExamples
     : beforeAfterExamples.filter(example => example.category === activeFilter);
 
   const categories = [
@@ -146,7 +146,7 @@ function BeforeAfter() {
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#005b96] rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#2596be] rounded-full blur-3xl" />
       </div>
-      
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           id="transformations"
@@ -160,7 +160,7 @@ function BeforeAfter() {
             <Sparkles className="w-5 h-5 text-[#005b96]" />
             <span className="text-[#03396c] font-medium">Résultats Garantis</span>
           </div>
-          
+
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 bg-gradient-to-r from-[#011f4b] to-[#005b96] bg-clip-text text-transparent">
             Transformations Remarquables
           </h2>
@@ -183,18 +183,16 @@ function BeforeAfter() {
               <button
                 key={category.value}
                 onClick={() => setActiveFilter(category.value)}
-                className={`px-4 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2 ${
-                  activeFilter === category.value
+                className={`px-4 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2 ${activeFilter === category.value
                     ? "bg-gradient-to-r from-[#005b96] to-[#2596be] text-white shadow-lg scale-105"
                     : "bg-white text-[#03396c] hover:bg-[#6497b1]/10 shadow-md"
-                }`}
-              >
-                <IconComponent 
-                  className={`w-4 h-4 ${
-                    activeFilter === category.value 
-                      ? "text-white" 
-                      : "text-[#2596be]"
                   }`}
+              >
+                <IconComponent
+                  className={`w-4 h-4 ${activeFilter === category.value
+                      ? "text-white"
+                      : "text-[#2596be]"
+                    }`}
                   strokeWidth={2}
                 />
                 {category.label}
@@ -203,7 +201,7 @@ function BeforeAfter() {
           })}
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ userSelect: "none" }}>
           {filteredExamples.map((example, index) => {
             const position = sliderPositions[index] || 50;
             return (
@@ -220,7 +218,7 @@ function BeforeAfter() {
                     {example.title}
                   </h3>
                 </div>
-                
+
                 <div
                   className="relative w-full overflow-hidden bg-gray-200 h-80 cursor-col-resize"
                   onMouseMove={(e) => handleSliderChange(index, e)}
@@ -235,10 +233,10 @@ function BeforeAfter() {
                     alt={`${example.title} - Après`}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
-                  
+
                   {/* Image Avant (superposée) */}
                   <div
-                    className="absolute inset-y-0 left-0 overflow-hidden transition-all duration-100"
+                    className="absolute inset-y-0 left-0 overflow-hidden"
                     style={{ width: `${position}%` }}
                   >
                     <img
@@ -248,13 +246,13 @@ function BeforeAfter() {
                       style={{ width: `${100 / (position / 100)}%`, maxWidth: 'none' }}
                     />
                   </div>
-                  
+
                   {/* Ligne de séparation et curseur */}
                   <div
-                    className="absolute top-0 bottom-0 w-0.5 bg-white shadow-2xl transition-all duration-100"
+                    className="absolute top-0 bottom-0 w-0.5 bg-white shadow-2xl"
                     style={{ left: `${position}%` }}
                   >
-                    <div 
+                    <div
                       className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white rounded-full shadow-2xl flex items-center justify-center border-3 border-[#2596be] cursor-grab active:cursor-grabbing hover:scale-110 transition-transform"
                       onMouseDown={() => startDragging(index)}
                       onTouchStart={() => startDragging(index)}
@@ -263,7 +261,7 @@ function BeforeAfter() {
                       <ChevronRight className="absolute right-2 w-4 h-4 text-[#011f4b]" />
                     </div>
                   </div>
-                  
+
                   {/* Labels Avant/Après */}
                   <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-md text-sm font-bold shadow-lg">
                     Avant
@@ -272,7 +270,7 @@ function BeforeAfter() {
                     Après
                   </div>
                 </div>
-                
+
                 {example.description && (
                   <div className="p-4 bg-gradient-to-b from-gray-50 to-white">
                     <p className="text-center text-[#03396c] font-medium">
@@ -315,7 +313,7 @@ function BeforeAfter() {
               </div>
             </div>
           </div>
-          
+
           {/* Call to action */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -324,8 +322,8 @@ function BeforeAfter() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-12"
           >
-            <a 
-              href="/contact" 
+            <a
+              href="/contact"
               className="inline-flex items-center gap-3 bg-gradient-to-r from-[#005b96] to-[#2596be] text-white px-8 py-4 rounded-full font-bold text-lg hover:from-[#03396c] hover:to-[#005b96] shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
             >
               <Sparkles className="w-6 h-6" />
@@ -364,7 +362,7 @@ export default function Services() {
           description="Solutions complètes de nettoyage et désinfection à la vapeur sèche pour particuliers et professionnels."
           backgroundImage="/testimonials/serrrrrrrr.jpg"
         />
-        
+
         <section className="py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <ServicesContent />
