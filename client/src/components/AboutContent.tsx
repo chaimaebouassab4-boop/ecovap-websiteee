@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Lightbulb, Heart, Award, Leaf, Shield, Users, CheckCircle } from "lucide-react";
-const steamImage = "/images/steam_cleaning_technology_closeup.png";
-const residentialImage = "/images/residential_cleaning_service.png";
+const steamImage = "/attached_assets/generated_images/steam_cleaning_technology_closeup.png";
+const residentialImage = "/attached_assets/generated_images/residential_cleaning_service.png";
 const values = [
   {
     icon: Target,
