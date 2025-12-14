@@ -27,7 +27,7 @@ export default function Header() {
   // Fonction pour gérer le clic sur le bouton transformations
   const handleTransformationsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    
+
     if (location === '/services') {
       const element = document.getElementById('transformations');
       if (element) {
@@ -51,7 +51,7 @@ export default function Header() {
   // Fonction pour gérer le clic sur le bouton témoignages
   const handleTestimonialsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    
+
     if (location === '/') {
       setTimeout(() => {
         const element = document.getElementById('temoignages');
@@ -73,7 +73,7 @@ export default function Header() {
         }
         return false;
       };
-      
+
       setTimeout(() => {
         if (!scrollToTestimonials()) {
           setTimeout(() => {
@@ -110,28 +110,21 @@ export default function Header() {
   }, [location]);
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white/95 backdrop-blur-lg shadow-lg' 
-        : 'bg-white'
-    }`}>
+    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled
+      ? 'bg-white/95 backdrop-blur-lg shadow-lg'
+      : 'bg-white'
+      }`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-4">
           {/* Logo */}
-         <Link href="/" className="flex items-center gap-3 group" data-testid="link-logo">
-  <div className="relative">
-<div></div>  
+          <Link style={{ height: "100%" }} href="/" className="flex items-center gap-3 group" data-testid="link-logo">
+            <div style={{ height: "100%", display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="relative">
 
-  <img src="/attached_assets/EcoVapLoGo.png" alt="EcoVap Logo"
-   className="w-40 h-40 md:w-56 md:h-56 object-contain relative z-10">
-  </img>
-  </div>
-  <div>
-    <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#011f4b] to-[#005b96] bg-clip-text text-transparent">
-      EcoVap
-    </span>
-  </div>
-</Link>
+              <img style={{ height: "80%", minWidth: 100 }} src="/attached_assets/EcoVapLoGo.png" alt="EcoVap Logo"
+                className="object-contain relative z-10">
+              </img>
+            </div>
+          </Link>
 
           {/* Navigation principale */}
           <nav className="hidden lg:flex items-center gap-2" aria-label="Navigation principale">
@@ -141,8 +134,8 @@ export default function Header() {
                   variant="ghost"
                   className={`
                     relative px-4 py-2 font-medium transition-all duration-300
-                    ${location === item.href 
-                      ? 'text-[#011f4b]' 
+                    ${location === item.href
+                      ? 'text-[#011f4b]'
                       : 'text-[#03396c] hover:text-[#011f4b]'
                     }
                   `}
@@ -160,11 +153,11 @@ export default function Header() {
           {/* Boutons d'action */}
           <div className="hidden lg:flex items-center gap-3">
             {/* Bouton Témoignages */}
-            <a 
+            <a
               href="/#temoignages"
               onClick={handleTestimonialsClick}
             >
-              <Button 
+              <Button
                 variant="outline"
                 className="
                   group relative overflow-hidden border-2 border-[#2596be] bg-transparent
@@ -179,13 +172,13 @@ export default function Header() {
                 <div className="absolute inset-0 bg-[#2596be] opacity-0 group-hover:opacity-10 transition-opacity" />
               </Button>
             </a>
-            
+
             {/* Bouton Transformations */}
-            <a 
+            <a
               href="/services#transformations"
               onClick={handleTransformationsClick}
             >
-              <Button 
+              <Button
                 variant="outline"
                 className="
                   group relative overflow-hidden bg-gradient-to-r from-[#005b96] to-[#2596be]
@@ -199,10 +192,10 @@ export default function Header() {
                 <span>Voir les Transformations</span>
               </Button>
             </a>
-              
+
             {/* Bouton Contact principal */}
             <Link href="/contact">
-              <Button 
+              <Button
                 className="
                   group relative overflow-hidden bg-[#011f4b] hover:bg-[#03396c] 
                   text-white px-6 py-2.5 rounded-full font-bold
@@ -247,9 +240,9 @@ export default function Header() {
                   </Button>
                 </Link>
               ))}
-              
+
               <div className="pt-3 border-t border-[#6497b1]/20 space-y-3">
-                <a 
+                <a
                   href="/#temoignages"
                   onClick={(e) => {
                     handleTestimonialsClick(e);
@@ -257,16 +250,16 @@ export default function Header() {
                   }}
                   className="block"
                 >
-                  <Button 
-                    className="w-full border-2 border-[#2596be] bg-transparent hover:bg-[#2596be] text-[#03396c] hover:text-white flex items-center justify-center gap-2" 
+                  <Button
+                    className="w-full border-2 border-[#2596be] bg-transparent hover:bg-[#2596be] text-[#03396c] hover:text-white flex items-center justify-center gap-2"
                     data-testid="button-mobile-temoignages"
                   >
                     <MessageCircle className="w-4 h-4" />
                     Témoignages
                   </Button>
                 </a>
-                
-                <a 
+
+                <a
                   href="/services#transformations"
                   onClick={(e) => {
                     handleTransformationsClick(e);
@@ -274,19 +267,19 @@ export default function Header() {
                   }}
                   className="block"
                 >
-                  <Button 
-                    className="w-full bg-gradient-to-r from-[#005b96] to-[#2596be] hover:from-[#03396c] hover:to-[#005b96] text-white flex items-center justify-center gap-2" 
+                  <Button
+                    className="w-full bg-gradient-to-r from-[#005b96] to-[#2596be] hover:from-[#03396c] hover:to-[#005b96] text-white flex items-center justify-center gap-2"
                     data-testid="button-mobile-transformations"
                   >
                     <Sparkles className="w-4 h-4" />
                     Voir les Transformations
                   </Button>
                 </a>
-                
+
                 <Link href="/contact" className="block">
-                  <Button 
-                    className="w-full bg-[#011f4b] hover:bg-[#03396c] text-white flex items-center justify-center gap-2" 
-                    onClick={() => setIsMenuOpen(false)} 
+                  <Button
+                    className="w-full bg-[#011f4b] hover:bg-[#03396c] text-white flex items-center justify-center gap-2"
+                    onClick={() => setIsMenuOpen(false)}
                     data-testid="button-mobile-contact"
                   >
                     <Droplets className="w-4 h-4" />
