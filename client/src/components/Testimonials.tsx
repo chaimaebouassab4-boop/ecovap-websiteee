@@ -78,7 +78,7 @@ const testimonialsData: Testimonial[] = [
     date: "Il y a 1 mois",
     verified: true
   },
-    {
+  {
     id: 6,
     name: "Malak Touihar",
     location: "Tanger",
@@ -100,7 +100,7 @@ const testimonialsData: Testimonial[] = [
     avatar: "/testimonials/avav.png",
     date: "Il y a 7 semaines",
     verified: true
-  },{
+  }, {
     id: 8,
     name: "Fathia chentouf",
     location: "Tanger",
@@ -124,7 +124,7 @@ const testimonialsData: Testimonial[] = [
     date: "Il y a 1 mois",
     verified: true
   },
-   {
+  {
     id: 10,
     name: "Houssam Nadour",
     location: "Tanger",
@@ -169,7 +169,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section 
+    <section
       id="temoignages"
       className="py-20 lg:py-28 bg-gradient-to-br from-blue-50 via-white to-green-50 relative overflow-hidden scroll-mt-24"
     >
@@ -272,7 +272,7 @@ export default function Testimonials() {
             <MessageCircle className="w-5 h-5 text-blue-600" />
             <span className="text-blue-700 font-medium">Témoignages Clients</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
             Ils nous font confiance
           </h2>
@@ -298,7 +298,7 @@ export default function Testimonials() {
                   <div className="p-8 lg:p-12 flex flex-col justify-center">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="relative">
-                        <img 
+                        <img
                           src={testimonialsData[currentIndex].avatar || "/default-avatar.jpg"}
                           alt={testimonialsData[currentIndex].name}
                           className="w-16 h-16 rounded-full object-cover border-3 border-green-500"
@@ -322,9 +322,9 @@ export default function Testimonials() {
                     {/* Étoiles */}
                     <div className="flex items-center gap-1 mb-4">
                       {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`w-5 h-5 ${i < testimonialsData[currentIndex].rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} 
+                        <Star
+                          key={i}
+                          className={`w-5 h-5 ${i < testimonialsData[currentIndex].rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`}
                         />
                       ))}
                       <span className="ml-2 text-sm text-gray-600">
@@ -349,26 +349,26 @@ export default function Testimonials() {
                     )}
                   </div>
 
-                 {/* Partie droite - Image/Capture */}
-<div className="relative h-full min-h-[400px] bg-gradient-to-br from-blue-100 to-green-100 flex items-center justify-center">
-  {testimonialsData[currentIndex].image ? (
-    <img 
-      src={testimonialsData[currentIndex].image}
-      alt={`Témoignage ${testimonialsData[currentIndex].name}`}
-      className="w-11/12 h-11/12 object-cover rounded-lg"
-    />
-  ) : (
-    <div className="flex items-center justify-center h-full">
-      <div className="text-center p-8">
-        <MessageCircle className="w-24 h-24 text-blue-300 mx-auto mb-4" />
-        <p className="text-gray-600">Capture d'écran du témoignage</p>
-      </div>
-    </div>
-  )}
-  
-  {/* Overlay gradient */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
-</div>
+                  {/* Partie droite - Image/Capture */}
+                  <div className="relative h-full min-h-[400px] bg-gradient-to-br from-blue-100 to-green-100 flex items-center justify-center">
+                    {testimonialsData[currentIndex].image ? (
+                      <img
+                        src={testimonialsData[currentIndex].image}
+                        alt={`Témoignage ${testimonialsData[currentIndex].name}`}
+                        className="w-11/12 h-11/12 object-cover rounded-lg"
+                      />
+                    ) : (
+                      <div className="flex items-center justify-center h-full">
+                        <div className="text-center p-8">
+                          <MessageCircle className="w-24 h-24 text-blue-300 mx-auto mb-4" />
+                          <p className="text-gray-600">Capture d'écran du témoignage</p>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -382,7 +382,7 @@ export default function Testimonials() {
           >
             <ChevronLeft className="w-6 h-6 text-gray-800" />
           </button>
-          
+
           <button
             onClick={handleNext}
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
@@ -398,11 +398,10 @@ export default function Testimonials() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'w-12 h-3 bg-gradient-to-r from-blue-500 to-green-500 rounded-full' 
-                  : 'w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-400'
-              }`}
+              className={`transition-all duration-300 ${index === currentIndex
+                ? 'w-12 h-3 bg-gradient-to-r from-blue-500 to-green-500 rounded-full'
+                : 'w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-400'
+                }`}
               aria-label={`Aller au témoignage ${index + 1}`}
             />
           ))}
@@ -418,7 +417,7 @@ export default function Testimonials() {
           <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">
             Plus d'avis de nos clients
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonialsData.slice(7, 10).map((testimonial, index) => (
               <motion.div
@@ -433,10 +432,10 @@ export default function Testimonials() {
               >
                 {/* Effet de fond au survol */}
                 <div className={`absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                
+
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-4">
-                    <img 
+                    <img
                       src={testimonial.avatar || "/default-avatar.jpg"}
                       alt={testimonial.name}
                       className="w-12 h-12 rounded-full object-cover"
@@ -446,20 +445,20 @@ export default function Testimonials() {
                       <p className="text-sm text-gray-500">{testimonial.location}</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center gap-1 mb-3">
                     {[...Array(5)].map((_, i) => (
-                      <Star 
-                        key={i} 
-                        className={`w-4 h-4 ${i < testimonial.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} 
+                      <Star
+                        key={i}
+                        className={`w-4 h-4 ${i < testimonial.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`}
                       />
                     ))}
                   </div>
-                  
+
                   <p className="text-gray-700 text-sm line-clamp-3">
                     "{testimonial.comment}"
                   </p>
-                  
+
                   <div className="mt-4 flex items-center justify-between">
                     <span className="text-xs text-gray-500">{testimonial.service}</span>
                     {hoveredCard === testimonial.id && (
@@ -490,8 +489,8 @@ export default function Testimonials() {
           <p className="text-lg text-gray-600 mb-6">
             Rejoignez des centaines de clients satisfaits
           </p>
-          <a 
-            href="/contact" 
+          <a
+            href="/contact"
             className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-blue-700 hover:to-green-700 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
           >
             <MessageCircle className="w-6 h-6" />
@@ -501,22 +500,22 @@ export default function Testimonials() {
       </div>
 
       {/* Styles pour les animations blob */}
-      <style jsx>{`
-        @keyframes blob {
-          0%, 100% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-      `}</style>
+      <style>{`
+      @keyframes blob {
+        0%, 100% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(30px, -50px) scale(1.1); }
+        66% { transform: translate(-20px, 20px) scale(0.9); }
+      }
+      .animate-blob {
+        animation: blob 7s infinite;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+    `}</style>
     </section>
   );
 }
