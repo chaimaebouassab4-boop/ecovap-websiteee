@@ -5,6 +5,7 @@ import { SiYoutube } from "react-icons/si";
 
 const steamImage = "/attached_assets/generated_images/steam_cleaning_technology_closeup.png";
 const residentialImage = "/attached_assets/generated_images/residential_cleaning_service.png";
+import { ShieldCheck, Clock } from "lucide-react";
 
 const values = [
   {
@@ -38,10 +39,10 @@ const certifications = [
 ];
 
 const stats = [
-  { value: "100%", label: "Bactéries éliminées" },
-  { value: "0", label: "Produits chimiques" },
-  { value: "40min", label: "Séchage textiles" },
-  { value: "5+", label: "Années d'expérience" },
+  { value: "100%", label: "Bactéries éliminées", icon: ShieldCheck, color: "text-green-500" },
+  { value: "0", label: "Produits chimiques", icon: Leaf, color: "text-emerald-500" },
+  { value: "40min", label: "Séchage textiles", icon: Clock, color: "text-blue-500" },
+  { value: "5+", label: "Années d'expérience", icon: Award, color: "text-amber-500" },
 ];
 
 // Services pour la section YouTube

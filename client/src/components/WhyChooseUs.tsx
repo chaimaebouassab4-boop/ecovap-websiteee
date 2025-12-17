@@ -80,31 +80,34 @@ export default function WhyChooseUs() {
       </motion.div>
 
       {/* Logo animé à DROITE */}
-      <motion.div
-        className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2"
-        initial={{ x: 200, opacity: 0, rotate: 180 }}
-        whileInView={{ x: 0, opacity: 1, rotate: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
-        animate={{
-          y: [0, 20, 0],
-          rotate: [0, -5, 0],
-        }}
-        transition={{
-          y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 },
-          rotate: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
-        }}
-        whileHover={{ 
-          scale: 1.1,
-          transition: { duration: 0.3 }
-        }}
-      >
-        <img 
-          src="/attached_assets/EcoVapLoGo.png" 
-          alt="EcoVap Logo" 
-          className="w-48 h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-80 object-contain drop-shadow-2xl"
-        />
-      </motion.div>
+    <motion.div
+  className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2"
+  initial={{ x: 200, opacity: 0, rotate: 180 }}
+  whileInView={{ x: 0, opacity: 1, rotate: 0 }}
+  viewport={{ once: true }}
+  animate={{
+    y: [0, -10, 0],
+    rotate: [0, 5, 0]
+  }}
+  transition={{
+    // Animation d'entrée
+    x: { duration: 1.5, ease: "easeOut", delay: 0.2 },
+    opacity: { duration: 1.5, ease: "easeOut", delay: 0.2 },
+    // Animations continues
+    y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+    rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+  }}
+  whileHover={{ 
+    scale: 1.1,
+    transition: { duration: 0.3 }
+  }}
+>
+  <img 
+    src="/attached_assets/EcoVapLoGo.png" 
+    alt="EcoVap Logo" 
+    className="w-48 h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-80 object-contain drop-shadow-2xl"
+  />
+</motion.div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
