@@ -226,8 +226,9 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <a href="mailto:okhammani@gmail.com" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-contact-email">
-                      okhammani@gmail.com
+                    <a href="mailto:Eco.vap.tng.info@gmail.com" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-contact-email">
+                    Eco.vap.tng.info@gmail.com
+
                     </a>
                   </div>
                 </li>

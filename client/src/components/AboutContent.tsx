@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, Lightbulb, Heart, Award, Leaf, Shield, Users, CheckCircle } from "lucide-react";
+import { Target, Lightbulb, Heart, Award, Leaf, Shield, Users, CheckCircle, Play, Sparkles, Bug } from "lucide-react";
 import { motion } from "framer-motion";
+import { SiYoutube } from "react-icons/si";
 
 const steamImage = "/attached_assets/generated_images/steam_cleaning_technology_closeup.png";
 const residentialImage = "/attached_assets/generated_images/residential_cleaning_service.png";
@@ -42,6 +43,38 @@ const stats = [
   { value: "40min", label: "Séchage textiles" },
   { value: "5+", label: "Années d'expérience" },
 ];
+
+// Services pour la section YouTube
+const servicesYoutube = [
+  {
+    icon: Sparkles,
+    title: "Nettoyage",
+    description: "Canapés, Matelas, Chaises, Tapis, Moquettes, Rideaux et plus encore.",
+    color: "text-blue-500",
+    bgColor: "bg-blue-50",
+    borderColor: "border-blue-200",
+  },
+  {
+    icon: Shield,
+    title: "Désinfection",
+    description: "Élimination des acariens, punaises de lit, bactéries, puces et moisissures.",
+    color: "text-green-500",
+    bgColor: "bg-green-50",
+    borderColor: "border-green-200",
+  },
+  {
+    icon: Bug,
+    title: "Désinsectisation",
+    description: "Traitement intérieur et extérieur contre cafards, fourmis et autres insectes.",
+    color: "text-orange-500",
+    bgColor: "bg-orange-50",
+    borderColor: "border-orange-200",
+  },
+];
+
+// Configuration YouTube
+const youtubeVideoId = "EeAYlscJ3lk";
+const youtubeChannelUrl = "https://www.youtube.com/@VotreChaine";
 
 export default function AboutContent() {
   return (
@@ -234,6 +267,158 @@ export default function AboutContent() {
           </div>
         </motion.div>
       </section>
+
+      {/* ==================== SECTION: YouTube + Services ==================== */}
+      <section className="py-8" aria-labelledby="demo-heading">
+        <div className="text-center mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            id="demo-heading"
+            className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-[#011f4b] to-[#005b96] bg-clip-text text-transparent"
+          >
+            Nos Services en Action
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+          >
+            Découvrez notre expertise à travers nos démonstrations vidéo
+          </motion.p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Side - YouTube Video */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            {/* YouTube Video Thumbnail with Play Button */}
+            <a
+              href={`https://www.youtube.com/watch?v=${youtubeVideoId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block overflow-hidden rounded-2xl shadow-2xl"
+            >
+              {/* Video Thumbnail */}
+              <div className="aspect-video relative bg-gradient-to-br from-[#011f4b] to-[#2596be]">
+                <img
+                  src={`https://img.youtube.com/vi/${youtubeVideoId}/maxresdefault.jpg`}
+                  alt="Démonstration EcoVap - Nettoyage à la vapeur sèche"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+                
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300" />
+                
+                {/* Play Button */}
+                <motion.div 
+                  className="absolute inset-0 flex items-center justify-center"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 group-hover:scale-110">
+                    <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                  </div>
+                </motion.div>
+
+                {/* YouTube Logo Badge */}
+                <div className="absolute bottom-4 right-4 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-full">
+                  <SiYoutube className="w-6 h-6 text-red-600" />
+                  <span className="text-sm font-medium text-gray-800">Voir la démo</span>
+                </div>
+              </div>
+            </a>
+
+            {/* Subscribe Button */}
+            <motion.a
+              href={"https://www.youtube.com/@EcoVapTanger"}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-6 inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full transition-colors duration-300 shadow-lg"
+            >
+              <SiYoutube className="w-5 h-5" />
+              <span className="font-medium">Voir toutes nos démonstrations</span>
+            </motion.a>
+          </motion.div>
+
+          {/* Right Side - Services */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className="text-2xl font-bold text-[#011f4b] mb-6">
+              Ce que nous faisons
+            </h3>
+            
+            {/* Services Grid */}
+            <div className="space-y-4">
+              {servicesYoutube.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.02, x: 5 }}
+                  className={`flex items-start gap-4 p-5 rounded-xl ${service.bgColor} border ${service.borderColor} transition-all duration-300 hover:shadow-lg`}
+                >
+                  <div className={`p-3 rounded-lg bg-white shadow-sm ${service.color}`}>
+                    <service.icon className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-[#011f4b] mb-1 text-lg">{service.title}</h4>
+                    <p className="text-gray-600">{service.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Additional Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="mt-8 p-6 bg-gradient-to-r from-[#011f4b]/5 to-[#2596be]/5 rounded-xl border border-[#2596be]/20"
+            >
+             <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="flex items-start gap-3"
+>
+  <motion.div
+    animate={{ rotate: [0, 10, -10, 0] }}
+    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+  >
+    <Leaf className="w-6 h-6 text-green-500 shrink-0 mt-1" />
+  </motion.div>
+  <p className="text-[#03396c] leading-relaxed">
+    <strong>100% Écologique</strong> - Tous nos services utilisent la technologie 
+    de vapeur sèche, sans aucun produit chimique. Résultats garantis et conformes 
+    aux normes AFNOR.
+  </p>
+</motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+      {/* ==================== FIN SECTION YouTube ==================== */}
 
       {/* Stats */}
       <section className="bg-gradient-to-r from-[#011f4b]/5 to-[#2596be]/5 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-12 rounded-xl border border-[#2596be]/10" aria-labelledby="stats-heading">

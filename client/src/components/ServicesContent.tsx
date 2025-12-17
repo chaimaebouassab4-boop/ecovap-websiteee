@@ -20,6 +20,7 @@ import {
   Shield,
   Store,
   Star,
+  LayoutGrid,
   
 } from "lucide-react";
 
@@ -77,7 +78,7 @@ const homeServices = [
     icon: Car,
     title: "Intérieur Véhicules",
     description: "Désinfection automobile",
-    image: "/services/car-interior-cleaning.jpg",
+    image: "/services/car-interior-cleaning.png",
     features: [
       "Sièges et moquettes",
       "Tableau de bord et plastiques",
@@ -122,6 +123,7 @@ const homeServices = [
     "Produits professionnels",
     ],
   },
+  
 
 ];
 
@@ -168,64 +170,41 @@ const businessServices = [
 
   {
     icon: Utensils,
-    title: "Restaurants & Cuisines",
-    description: "Conformité HACCP",
+    title: "Restaurants & Cafés",
+    description: "Nettoyage et désinfection professionnelle",
+    image: "/services/armchairs.png",
+    features: [
+      "Chaises et banquettes",
+      "Canapés et fauteuils",
+      "Désinfection des surfaces",
+      "Salles de restauration",
+    ],
+  },
+ {
+    icon: Sofa, // ou Armchair si disponible dans lucide-react
+    title: "Espaces d'Accueil",
+    description: "Nettoyage de canapés et réception",
+    image: "/services/IMG-20251208-WA0051.jpg",
+    features: [
+      "Canapés et fauteuils",
+      "Halls d'accueil",
+      "Salles d'attente",
+      "Mobilier de réception",
+    ],
+  },
+  {
+    icon: Bug, // ou Shield pour désinsectisation
+    title: "Désinfection & Désinsectisation",
+    description: "Protection complète intérieur/extérieur",
     image: "/services/restaurant-cleaning.png",
     features: [
-      "Désinfection des surfaces alimentaires",
-      "Équipements de cuisine",
-      "Salles de restauration",
-      "Certification HACCP",
+      "Acariens et punaises de lit",
+      "Cafards et fourmis",
+      "Insectes d'intérieur et extérieur",
+      "Bactéries et moisissures",
     ],
   },
-  {
-    icon: Factory,
-    title: "Usines & Ateliers",
-    description: "Nettoyage industriel",
-    image: "/services/industrial-cleaning.png",
-    features: [
-      "Machines et équipements",
-      "Sols industriels",
-      "Zones de production",
-      "Vestiaires et sanitaires",
-    ],
-  },
-  {
-    icon: Warehouse,
-    title: "Dépôts & Entrepôts",
-    description: "Grands espaces de stockage",
-    image: "/services/warehouse-cleaning.jpg",
-    features: [
-      "Rayonnages et étagères",
-      "Sols de grande surface",
-      "Zones de chargement",
-      "Traitement anti-nuisibles",
-    ],
-  },
-  {
-    icon: HardHat,
-    title: "Chantiers",
-    description: "Nettoyage fin de chantier",
-    image: "/services/construction-cleaning.jpg",
-    features: [
-      "Nettoyage post-travaux",
-      "Élimination des poussières",
-      "Préparation à la livraison",
-      "Désinfection complète",
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: "Milieux Médicaux",
-    description: "Normes AFNOR respectées",
-    image: "/services/medical-cleaning.png",
-    features: [
-      "Cabinets médicaux",
-      "Cliniques et laboratoires",
-      "Salles d'attente",
-      "Désinfection niveau hospitalier",
-    ],
-  },
+  
 ];
 
 interface ServiceCardProps {

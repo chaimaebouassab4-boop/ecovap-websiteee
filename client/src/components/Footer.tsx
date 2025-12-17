@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Droplets, Phone, MapPin, Mail } from "lucide-react";
-import { SiFacebook, SiInstagram, SiWhatsapp } from "react-icons/si";
+import { SiFacebook, SiInstagram, SiWhatsapp,SiYoutube } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 
 const quickLinks = [
@@ -14,6 +14,8 @@ const socialLinks = [
   { icon: SiFacebook, href: "https://web.facebook.com/profile.php?id=61564083751443&_rdc=1&_rdr#", label: "Facebook" },
   { icon: SiInstagram, href: "https://www.instagram.com/ecovap.tanger/", label: "Instagram" },
   { icon: SiWhatsapp, href: "https://wa.me/212657387660", label: "WhatsApp" },
+  { icon: SiYoutube, href: "https://www.youtube.com/@EcoVapTanger/featured", label: "YouTube" },
+
 ];
 
 export default function Footer() {
@@ -80,7 +82,8 @@ export default function Footer() {
                 <li className="flex items-start gap-3">
                   <Mail className="w-4 h-4 text-primary mt-1 shrink-0" aria-hidden="true" />
                   <a href="mailto:contact@ecovap.ma" className="text-sm text-gray-400 hover:text-primary transition-colors" data-testid="link-email">
-                    okhammani@gmail.com
+                  Eco.vap.tng.info@gmail.com
+
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
@@ -112,14 +115,14 @@ export default function Footer() {
         <div className="py-6 border-t border-gray-800">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
             <p>&copy; {new Date().getFullYear()} EcoVap. Tous droits réservés.</p>
-            <div className="flex items-center gap-4">
-              <Link href="#" className="hover:text-primary transition-colors" data-testid="link-privacy">
-                Politique de confidentialité
-              </Link>
-              <Link href="#" className="hover:text-primary transition-colors" data-testid="link-terms">
-                Mentions légales
-              </Link>
-            </div>
+         <div className="flex items-center gap-4">
+  <Link href="/politique-de-confidentialite" className="hover:text-primary transition-colors" data-testid="link-privacy">
+    Politique de confidentialité
+  </Link>
+  <Link href="/mentions-legales" className="hover:text-primary transition-colors" data-testid="link-terms">
+    Mentions légales
+  </Link>
+</div>
           </div>
         </div>
       </div>
