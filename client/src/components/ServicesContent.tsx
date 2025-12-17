@@ -123,6 +123,7 @@ const homeServices = [
     "Produits professionnels",
     ],
   },
+
   
 
 ];
@@ -140,6 +141,7 @@ const businessServices = [
       "Mobilier de bureau",
     ],
   },
+  
   {
   icon: Star, // ou Building, Star
   title: "Services Spéciaux pour Hôtels",
