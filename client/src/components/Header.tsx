@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, MessageCircle, Sparkles, Droplets } from "lucide-react";
+import { Menu, X, MessageCircle, Sparkles, Droplets, FileText } from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Accueil" },
@@ -192,6 +192,7 @@ export default function Header() {
                 <span>Voir les Transformations</span>
               </Button>
             </a>
+            
 
             {/* Bouton Contact principal */}
             <Link href="/contact">
@@ -210,6 +211,27 @@ export default function Header() {
               </Button>
             </Link>
           </div>
+
+<Link href="/contact">
+  <Button
+    variant="outline"
+    className="
+      group relative overflow-hidden
+      bg-gradient-to-r from-sky-500 to-green-500
+      hover:from-sky-600 hover:to-green-600
+      text-white border-none
+      transition-all duration-300
+      flex items-center gap-2 px-5 py-2.5
+      rounded-full font-semibold
+      shadow-md hover:shadow-lg
+      transform hover:scale-105
+    "
+    data-testid="button-header-devis"
+  >
+    <FileText className="w-4 h-4" />
+    <span>Obtenir votre devis</span>
+  </Button>
+</Link>
 
           {/* Bouton menu mobile */}
           <Button

@@ -407,16 +407,33 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Grille de mini-témoignages */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">
-            Plus d'avis de nos clients
-          </h3>
+       {/* Grille de mini-témoignages */}
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+>
+  {/* Title + Button Row */}
+  <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
+    <h3 className="text-2xl font-bold text-gray-800">
+      Plus d’avis de nos clients
+    </h3>
+
+  <a
+  href="https://www.google.com/search?sca_esv=434108a22045feca&sxsrf=AE3TifMHUD9SDdAcE63iNzC5xUTdOp6a8Q:1766066542638&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E5LmdG-1ruIBDlPI-24I9kqHpgorCQz21DfBp92eIvLxU6DrUskjHOhdekn-u9r8_-UhOFxVt8qa4zcEjGvxKOTov0RyCTJi89QmtYr6C2doXEgINg%3D%3D&q=ECOVAP+TANGER+SARL+Reviews&sa=X&ved=2ahUKEwjLzrHHpseRAxVCxwIHHaY0EMgQ0bkNegQIHxAD&biw=1536&bih=791&dpr=1.25"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Voir les avis Google ECOVAP Tanger SARL"
+  className="hidden md:inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-3 rounded-full font-semibold text-base hover:from-blue-700 hover:to-green-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+>
+  <MessageCircle className="w-5 h-5" />
+  Consultez tous les avis
+</a>
+
+  </div>
+
+  {/* ici tu peux mettre ta grille de mini-témoignages */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonialsData.slice(7, 10).map((testimonial, index) => (
@@ -496,6 +513,8 @@ export default function Testimonials() {
             <MessageCircle className="w-6 h-6" />
             Demandez votre devis gratuit
           </a>
+
+
         </motion.div>
       </div>
 

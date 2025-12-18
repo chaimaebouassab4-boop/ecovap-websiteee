@@ -52,6 +52,11 @@ export default function Hero() {
                 Contactez-nous
               </Button>
             </Link>
+
+              <Link href="/contact">
+              <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white backdrop-blur-sm" data-testid="button-hero-contact">
+Obtenir votre devis Gratuit   </Button>
+            </Link>
           </div>
         </div>
       </div>
