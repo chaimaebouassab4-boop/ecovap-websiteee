@@ -264,7 +264,7 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Horaires</p>
-                    <p className="text-muted-foreground">Lun - Ven: 8h00 - 22h00</p>
+                    <p className="text-muted-foreground">Lun - Ven: 9h00 - 22h00</p>
                     <p className="text-muted-foreground">Sam - Dim: 8h00 - 22h00</p>
                   </div>
                 </li>
