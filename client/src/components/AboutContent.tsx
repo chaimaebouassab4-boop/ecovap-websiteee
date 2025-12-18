@@ -42,7 +42,7 @@ const stats = [
   { value: "100%", label: "Bactéries éliminées", icon: ShieldCheck, color: "text-green-500" },
   { value: "0", label: "Produits chimiques", icon: Leaf, color: "text-emerald-500" },
   { value: "40min", label: "Séchage textiles", icon: Clock, color: "text-blue-500" },
-  { value: "5+", label: "Années d'expérience", icon: Award, color: "text-amber-500" },
+{ value: "Expertise", label: "Professionnelle", icon: Award, color: "text-amber-500" },
 ];
 
 // Services pour la section YouTube

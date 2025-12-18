@@ -10,10 +10,24 @@ const navItems = [
   { href: "/contact", label: "Contact" },
 ];
 
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [location, setLocation] = useLocation();
   const [scrolled, setScrolled] = useState(false);
+
+  // Fonction pour gérer le clic sur le logo
+  const handleLogoClick = (e: React.MouseEvent) => {
+    // Si déjà sur la page d'accueil, juste scroll vers le haut
+    if (location === "/") {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    // Sinon, le Link navigue vers "/" et scroll automatiquement
+  };
 
   // Détecter le scroll pour ajouter un effet au header
   useEffect(() => {
@@ -117,7 +131,7 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-4">
           {/* Logo */}
-          <Link style={{ height: "100%" }} href="/" className="flex items-center gap-3 group" data-testid="link-logo">
+          <Link style={{ height: "100%" }} href="/"   onClick={handleLogoClick}   className="flex items-center gap-3 group" data-testid="link-logo">
             <div style={{ height: "100%", display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="relative">
 
               <img style={{ height: "80%", minWidth: 100 }} src="/attached_assets/EcoVapLoGo.png" alt="EcoVap Logo"
@@ -216,15 +230,10 @@ export default function Header() {
   <Button
     variant="outline"
     className="
-      group relative overflow-hidden
-      bg-gradient-to-r from-sky-500 to-green-500
-      hover:from-sky-600 hover:to-green-600
-      text-white border-none
-      transition-all duration-300
-      flex items-center gap-2 px-5 py-2.5
-      rounded-full font-semibold
-      shadow-md hover:shadow-lg
-      transform hover:scale-105
+     group relative overflow-hidden bg-gradient-to-r from-[#005b96] to-[#2596be]
+                  hover:from-[#03396c] hover:to-[#005b96] text-white 
+                  border-none transition-all duration-300 flex items-center gap-2 px-5 py-2.5
+                  rounded-full font-semibold shadow-md hover:shadow-lg transform hover:scale-105
     "
     data-testid="button-header-devis"
   >
