@@ -16,6 +16,44 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { Send, Phone, MapPin, Mail, Clock } from "lucide-react";
 import { useState, useEffect } from "react";
+import emailjs from '@emailjs/browser';
+
+
+const { toast } = useToast();
+
+const onSubmit = async (values: { nom: any; email: any; telephone: any; message: any; }) => {
+  try {
+    const serviceId = 'service_15esure';
+    const templateId = 'VOTRE_TEMPLATE_ID';
+    const publicKey = 'VOTRE_PUBLIC_KEY';
+
+    // On prépare les paramètres pour le template EmailJS
+    const templateParams = {
+      nom_complet: values.nom,        // correspond à {{nom_complet}} dans votre template
+      email_client: values.email,     // correspond à {{email_client}}
+      telephone_client: values.telephone, // correspond à {{telephone_client}}
+      message: values.message,         // correspond à {{message}}
+    };
+
+    await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+    toast({
+      title: "Succès !",
+      description: "Votre message a été envoyé à EcoVap.",
+    });
+
+    form.reset(); // Vide le formulaire après l'envoi
+  } catch (error) {
+    console.error("Erreur EmailJS:", error);
+    toast({
+      variant: "destructive",
+      title: "Erreur",
+      description: "Impossible d'envoyer le message. Veuillez essayer WhatsApp.",
+    });
+  }
+};
+
+
 
 const contactSchema = z.object({
   nom: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
@@ -200,15 +238,22 @@ export default function ContactForm() {
                   )}
                 />
 
-                <Button 
-                  type="submit"
-                  className="w-full" 
-                  size="lg" 
-                  data-testid="button-submit-contact"
-                >
-                  <Send className="w-4 h-4 mr-2" />
-                  Envoyer le message
-                </Button>
+             <Button 
+  type="submit"
+  className="w-full" 
+  size="lg" 
+  disabled={form.formState.isSubmitting} // Désactive le bouton pendant l'envoi
+  data-testid="button-submit-contact"
+>
+  {form.formState.isSubmitting ? (
+    "Envoi en cours..."
+  ) : (
+    <>
+      <Send className="w-4 h-4 mr-2" />
+      Envoyer le message
+    </>
+  )}
+</Button>
               </form>
             </Form>
           </CardContent>
@@ -244,9 +289,9 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <a href="mailto:Eco.vap.tng.info@gmail.com" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-contact-email">
-                      Eco.vap.tng.info@gmail.com
-                    </a>
+                    <a href="mailto:eco.cleaners.tng.info@gmail.com" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-contact-email">
+eco.cleaners.tng.info@gmail.com             
+       </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4 group">

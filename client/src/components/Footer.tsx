@@ -74,9 +74,8 @@ export default function Footer() {
                 </li>
                 <li className="flex items-start gap-3">
                   <Mail className="w-4 h-4 text-primary mt-1 shrink-0" aria-hidden="true" />
-                  <a href="mailto:contact@ecovap.ma" className="text-sm text-gray-400 hover:text-primary transition-colors" data-testid="link-email">
-                  Eco.vap.tng.info@gmail.com
-
+                  <a href="mailto:eco.cleaners.tng.info@gmail.com" className="text-sm text-gray-400 hover:text-primary transition-colors" data-testid="link-email">
+eco.cleaners.tng.info@gmail.com
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
