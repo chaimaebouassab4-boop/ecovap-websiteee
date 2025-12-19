@@ -21,7 +21,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 1,
     name: "Khadija Elbakkal",
-    location: "Casablanca",
+    location: "Tanger",
     service: "Nettoyage de Canapé",
     rating: 5,
     comment: "Honestly, I’m impressed by their work! My sofas, mattresses, and carpets look completely renewed after the steam cleaning. Everything feels fresh and comfortable again. The team was on time, respectful, and very detail-oriented. I’ll definitely call them again and recommend them to others!",
@@ -33,7 +33,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 2,
     name: "Oumaima Elhadi",
-    location: "Rabat",
+    location: "",
     service: "Nettoyage Matelas",
     rating: 5,
     comment: "We are a hotel company, we called them for our sofas, and mattresses. They handled a great quantity with efficiency and professional care. They also offer steam cleaning for all of our rooms. We do thank Mr Ousama for his professional services. We highly recommend.Once again, Thank you very much.",
@@ -45,7 +45,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 3,
     name: "MaKika Mb",
-    location: "Marrakech",
+    location: "Tanger",
     service: "Nettoyage de Canapés",
     rating: 5,
     comment: "Professional team. They strictly adhered to the cleaning schedule for my sofa. As for the service, there's nothing to complain about; we got the sofa back to its original color, especially with the kids. Otherwise, I'm already thinking about our next appointment next year, insha'Allah.I'm so grateful to the owner and his team.",

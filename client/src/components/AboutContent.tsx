@@ -12,14 +12,14 @@ const values = [
     icon: Target,
     title: "Notre Mission",
     description: "Offrir des solutions de nettoyage innovantes et écologiques qui garantissent une hygiène parfaite tout en préservant l'environnement et la santé de nos clients.",
-    image: "/services/mission.jpg",
+    image: "/services/action.jpg",
     color: "from-[#011f4b] to-[#03396c]"
   },
   {
     icon: Lightbulb,
     title: "Innovation",
     description: "Nous utilisons la technologie de pointe de la vapeur sèche, une méthode révolutionnaire qui élimine 100% des germes sans produits chimiques.",
-    image: "/services/innovation.jpg",
+    image: "/services/menage 4.jpg",
     color: "from-[#005b96] to-[#2596be]"
   },
   {
@@ -626,9 +626,7 @@ export default function AboutContent() {
             La Technologie Vapeur Sèche
           </h2>
           <p className="text-muted-foreground mb-4">
-            La vapeur sèche est une technologie de nettoyage révolutionnaire qui 
-            utilise de la vapeur à haute température (180°C) avec un taux d'humidité 
-            très faible (moins de 5%).
+           La vapeur sèche est une technologie de nettoyage innovante qui utilise une vapeur à haute température (jusqu’à 180 °C) avec un taux d’humidité très faible (moins de 5 %), garantissant une désinfection efficace sans mouiller les surfaces.
           </p>
           <p className="text-muted-foreground mb-6">
             Cette méthode permet de :
@@ -675,9 +673,8 @@ export default function AboutContent() {
           Une Équipe Professionnelle
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Notre équipe de techniciens qualifiés est formée aux dernières techniques 
-          de nettoyage à la vapeur sèche. Nous garantissons un service professionnel, 
-          ponctuel et respectueux de vos espaces.
+         Notre équipe de techniciens qualifiés à Tanger est formée aux dernières techniques de nettoyage à la vapeur sèche.
+Nous garantissons un service professionnel, ponctuel et respectueux de vos espaces, pour un résultat propre, sain et durable.
         </p>
       </motion.section>
     </div>

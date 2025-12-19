@@ -3,11 +3,11 @@ import { Droplets, Phone, MapPin, Mail } from "lucide-react";
 import { SiFacebook, SiInstagram, SiWhatsapp,SiYoutube } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 
-const quickLinks = [
-  { href: "/", label: "Accueil" },
-  { href: "/about", label: "À Propos" },
-  { href: "/services", label: "Services" },
-  { href: "/contact", label: "Contact" },
+const companyInfo = [
+  { label: "ICE", value: "003736008000024" },
+  { label: "R.C", value: "165413 R.C Tanger" },
+  { label: "IFU", value: "66999860" },
+  { label: "TP", value: "57138239" },
 ];
 
 const socialLinks = [
@@ -53,22 +53,15 @@ export default function Footer() {
               </div>
             </div>
 
-            <div>
-              <h3 className="text-white font-semibold mb-4">Liens Rapides</h3>
-              <ul className="space-y-2">
-                {quickLinks.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-gray-400 hover:text-primary transition-colors"
-                      data-testid={`link-footer-${link.label.toLowerCase().replace(/\s/g, "-")}`}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+           <div className="flex flex-col gap-2">
+  <h3 className="font-bold text-white mb-2">Informations Légales</h3>
+  {companyInfo.map((info, index) => (
+    <div key={index} className="text-sm text-gray-400">
+      <span className="font-semibold text-[#6497b1]">{info.label} : </span>
+      {info.value}
+    </div>
+  ))}
+</div>
 
             <div>
               <h3 className="text-white font-semibold mb-4">Contact</h3>
@@ -112,19 +105,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="py-6 border-t border-gray-800">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            <p>&copy; {new Date().getFullYear()} EcoVap. Tous droits réservés.</p>
-         <div className="flex items-center gap-4">
-  <Link href="/politique-de-confidentialite" className="hover:text-primary transition-colors" data-testid="link-privacy">
-    Politique de confidentialité
-  </Link>
-  <Link href="/mentions-legales" className="hover:text-primary transition-colors" data-testid="link-terms">
-    Mentions légales
-  </Link>
-</div>
-          </div>
-        </div>
+      
       </div>
     </footer>
   );

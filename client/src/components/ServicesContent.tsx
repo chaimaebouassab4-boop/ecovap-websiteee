@@ -27,112 +27,124 @@ import {
 const homeServices = [
   {
     icon: Home,
-    title: "Nettoyage Résidentiel",
-    description: "Maisons, villas et appartements",
-    image: "/services/residential-cleaning.jpeg", // Ajoutez vos images
+    title: "Nettoyage Résidentiel à Tanger",
+    description:
+      "Nettoyage vapeur des maisons, villas et appartements à Tanger pour un intérieur sain et désinfecté",
+    image: "/services/residential-cleaning.jpeg",
     features: [
-      "Nettoyage complet de toutes les surfaces",
-      "Désinfection des zones à risque",
+      "Nettoyage en profondeur de toutes les surfaces",
+      "Désinfection vapeur des zones sensibles",
       "Traitement des sols et moquettes",
       "Nettoyage des vitres et miroirs",
     ],
   },
-  
+
   {
     icon: BedDouble,
-    title: "Matelas & Literie",
-    description: "Désinfection et traitement anti-acariens",
+    title: "Nettoyage de Matelas & Literie à Tanger",
+    description:
+      "Désinfection vapeur des matelas et literies pour éliminer acariens et allergènes",
     image: "/services/mattress-cleaning.jpg",
     features: [
-      "Élimination des acariens à 100%",
+      "Élimination des acariens",
       "Neutralisation des allergènes",
       "Suppression des mauvaises odeurs",
-      "Séchage rapide (40 minutes)",
+      "Séchage rapide (environ 40 minutes)",
     ],
   },
+
   {
-  icon: Building2, // ou Sparkles, Building2
-  title: "Nettoyage Complet de Maison",
-  description: "Service complet de nettoyage en profondeur avec une équipe de femmes de ménage professionnelles",
-  image: "/services/menage 4.jpg", // Ajustez selon votre image
-  features: [
-    "Équipe professionnelle qualifiée",
-    "Cuisine, salles de bain, vitres, sols",
-    "Meubles, électroménagers, terrasses",
-    "Idéal pour déménagements et rénovations",
-  ],
-},
+    icon: Building2,
+    title: "Nettoyage Complet de Maison à Tanger",
+    description:
+      "Service de nettoyage en profondeur à Tanger avec une équipe professionnelle qualifiée",
+    image: "/services/menage 4.jpg",
+    features: [
+      "Équipe professionnelle expérimentée",
+      "Cuisine, salles de bain, vitres et sols",
+      "Meubles, électroménagers et terrasses",
+      "Idéal après déménagement ou rénovation",
+    ],
+  },
+
   {
     icon: Sofa,
-    title: "Canapés & Textiles",
-    description: "Nettoyage en profondeur des tissus",
+    title: "Nettoyage de Canapés & Textiles à Tanger",
+    description:
+      "Nettoyage vapeur des canapés, fauteuils et textiles pour un résultat propre et sans odeurs",
     image: "/services/sofa-cleaning.jpg",
     features: [
-      "Nettoyage sans mouiller",
+      "Nettoyage vapeur sans mouiller",
       "Élimination des taches",
       "Désodorisation complète",
-      "Traitement anti-acariens",
+      "Traitement anti-acariens naturel",
     ],
   },
+
   {
     icon: Car,
-    title: "Intérieur Véhicules",
-    description: "Désinfection automobile",
+    title: "Nettoyage Intérieur de Véhicules à Tanger",
+    description:
+      "Nettoyage vapeur et désinfection de l’intérieur des voitures à Tanger",
     image: "/services/car-interior-cleaning.png",
     features: [
-      "Sièges et moquettes",
+      "Nettoyage des sièges et moquettes",
       "Tableau de bord et plastiques",
       "Climatisation et aération",
-      "Élimination des odeurs",
+      "Élimination des mauvaises odeurs",
     ],
   },
+
   {
     icon: Bug,
-    title: "Désinsectisation",
-    description: "Traitement anti-parasites",
+    title: "Désinsectisation Écologique à Tanger",
+    description:
+      "Traitement anti-parasites à Tanger contre cafards, punaises de lit et insectes",
     image: "/services/pest-control.jpeg",
     features: [
       "Punaises de lit",
       "Cafards et blattes",
       "Puces et tiques",
-      "Méthode écologique",
+      "Méthode écologique et efficace",
     ],
   },
+
   {
     icon: Shield,
-    title: "Traitement Anti-Acariens",
-    description: "Solution contre les allergies",
+    title: "Traitement Anti-Acariens à Tanger",
+    description:
+      "Solution naturelle contre les acariens pour améliorer la qualité de l’air intérieur",
     image: "/services/action.jpg",
     features: [
-      "Élimination totale des acariens",
-      "Traitement préventif",
-      "Idéal pour les allergiques",
-      "Résultat durable",
+      "Élimination des acariens",
+      "Traitement préventif durable",
+      "Idéal pour les personnes allergiques",
+      "Résultats visibles et durables",
     ],
   },
 
   {
     icon: Sparkles,
-    title: "Nettoyage des Vitres",
-    description: "Nettoyage professionnel des surfaces vitrées",
+    title: "Nettoyage Professionnel des Vitres à Tanger",
+    description:
+      "Nettoyage des vitres, fenêtres et surfaces vitrées pour un rendu impeccable",
     image: "/services/vitre1.jpg",
     features: [
-     "Vitres, fenêtres, baies vitrées",
-    "Miroirs et surfaces réfléchissantes",
-    "Résultat brillant sans traces",
-    "Produits professionnels",
+      "Vitres, fenêtres et baies vitrées",
+      "Miroirs et surfaces réfléchissantes",
+      "Résultat brillant sans traces",
+      "Produits et méthodes professionnelles",
     ],
   },
-
-  
-
 ];
+
 
 const businessServices = [
   {
     icon: Building2,
-    title: "Bureaux & Showrooms",
-    description: "Environnement professionnel sain",
+    title: "Nettoyage de Bureaux & Showrooms à Tanger",
+    description:
+      "Nettoyage professionnel des espaces de travail pour un environnement sain",
     image: "/services/office-cleaning.png",
     features: [
       "Postes de travail et écrans",
@@ -141,39 +153,42 @@ const businessServices = [
       "Mobilier de bureau",
     ],
   },
-  
-  {
-  icon: Star, // ou Building, Star
-  title: "Services Spéciaux pour Hôtels",
-  description: "Solution complète pour l'hôtellerie",
-  image: "/services/hoeeeeeeeee.png",
-  features: [
-    "Nettoyage de tapis, moquettes et chaises",
-    "Chambres et espaces communs",
-    "Désinfection vapeur des cuisines et sanitaires",
-    "Interventions rapides avec séchage immédiat",
-    "Service discret conforme aux standards d'hygiène",
-  ],
-  category: "entreprise"
-},
 
-{
-  icon: Store, 
-  title: "Nettoyage de Vitrines Commerciales",
-  description: "Nettoyage pour grands magasins",
-  image: "/services/vitre2.jpg",
-  features: [
-    "Magasins de meubles et automobiles",
-    "Vitrines et baies vitrées grand format",
-    "Équipements et showrooms",
-    "Résultat brillant sans traces",
-  ],
-},
+  {
+    icon: Star,
+    title: "Services Spéciaux pour Hôtels à Tanger",
+    description:
+      "Solutions complètes de nettoyage vapeur pour hôtels et établissements touristiques",
+    image: "/services/hoeeeeeeeee.png",
+    features: [
+      "Nettoyage de tapis, moquettes et chaises",
+      "Chambres et espaces communs",
+      "Désinfection vapeur cuisines et sanitaires",
+      "Interventions rapides avec séchage immédiat",
+      "Service discret conforme aux normes d’hygiène",
+    ],
+    category: "entreprise",
+  },
+
+  {
+    icon: Store,
+    title: "Nettoyage de Vitrines Commerciales à Tanger",
+    description:
+      "Nettoyage professionnel des vitrines et surfaces vitrées de magasins",
+    image: "/services/vitre2.jpg",
+    features: [
+      "Magasins de meubles et automobiles",
+      "Vitrines grand format",
+      "Showrooms et espaces commerciaux",
+      "Résultat brillant sans traces",
+    ],
+  },
 
   {
     icon: Utensils,
-    title: "Restaurants & Cafés",
-    description: "Nettoyage et désinfection professionnelle",
+    title: "Nettoyage de Restaurants & Cafés à Tanger",
+    description:
+      "Nettoyage et désinfection vapeur des espaces de restauration",
     image: "/services/armchairs.png",
     features: [
       "Chaises et banquettes",
@@ -182,10 +197,12 @@ const businessServices = [
       "Salles de restauration",
     ],
   },
- {
-    icon: Sofa, // ou Armchair si disponible dans lucide-react
-    title: "Espaces d'Accueil",
-    description: "Nettoyage de canapés et réception",
+
+  {
+    icon: Sofa,
+    title: "Nettoyage des Espaces d’Accueil à Tanger",
+    description:
+      "Nettoyage vapeur des canapés et fauteuils dans les halls et réceptions",
     image: "/services/IMG-20251208-WA0051.jpg",
     features: [
       "Canapés et fauteuils",
@@ -194,20 +211,22 @@ const businessServices = [
       "Mobilier de réception",
     ],
   },
+
   {
-    icon: Bug, // ou Shield pour désinsectisation
-    title: "Désinfection & Désinsectisation",
-    description: "Protection complète intérieur/extérieur",
+    icon: Bug,
+    title: "Désinfection & Désinsectisation à Tanger",
+    description:
+      "Protection complète contre insectes, bactéries et moisissures",
     image: "/services/restaurant-cleaning.png",
     features: [
       "Acariens et punaises de lit",
       "Cafards et fourmis",
-      "Insectes d'intérieur et extérieur",
+      "Insectes intérieurs et extérieurs",
       "Bactéries et moisissures",
     ],
   },
-  
 ];
+
 
 interface ServiceCardProps {
   icon: React.ElementType;
@@ -350,8 +369,8 @@ export default function ServicesContent() {
             Besoin d'un Devis Personnalisé ?
           </h2>
           <p className="text-[#6497b1] max-w-2xl mx-auto mb-8 text-lg">
-            Contactez-nous pour obtenir un devis gratuit adapté à vos besoins spécifiques. 
-            Notre équipe vous répondra dans les plus brefs délais.
+           Contactez EcoVap Tanger pour obtenir un devis gratuit et personnalisé selon vos besoins en nettoyage et désinfection à la vapeur.
+Notre équipe vous répond rapidement et vous accompagne pour une solution efficace, écologique et adaptée à votre situation..
           </p>
           <Link href="/contact">
             <Button 

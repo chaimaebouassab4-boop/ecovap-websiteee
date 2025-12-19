@@ -9,10 +9,12 @@ export default function CTASection() {
         <h2 id="cta-heading" className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
           Prêt pour un Environnement Plus Sain ?
         </h2>
-        <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-          Contactez EcoVap dès aujourd'hui pour un devis gratuit. 
-          Notre équipe est à votre écoute pour répondre à tous vos besoins de nettoyage et désinfection.
-        </p>
+     <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-8">
+  Contactez <strong>EcoVap Tanger</strong> dès aujourd’hui pour obtenir un <strong>devis gratuit</strong>.
+  Notre équipe vous accompagne pour tous vos besoins en <strong>nettoyage vapeur </strong> et
+  <strong> désinfection professionnelle</strong>, pour particuliers et entreprises.
+</p>
+
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="/contact">
             <Button size="lg" variant="secondary" className="group" data-testid="button-cta-contact">

@@ -60,9 +60,12 @@ export default function Hero() {
           </p>
 
           <p className="text-base text-gray-300 mb-8 max-w-xl">
-            EcoVap, votre partenaire de confiance pour un nettoyage professionnel 
-            et une désinfection innovante à Tanger. Élimine 100% des bactéries, 
-            acariens et parasites, y compris le COVID-19.
+           EcoVap Tanger est spécialisée dans le nettoyage à la vapeur sèche à Tanger.
+Grâce à notre technologie de vapeur haute température, nous éliminons bactéries,
+acariens et mauvaises odeurs sans produits chimiques.
+EcoVap intervient auprès des particuliers et des professionnels pour un nettoyage
+écologique, efficace et durable à Tanger.
+
           </p>
 
           <div className="flex flex-wrap gap-4">
