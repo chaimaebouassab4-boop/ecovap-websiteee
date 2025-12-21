@@ -167,7 +167,6 @@ function toast({ ...props }: Toast) {
     update,
   }
 }
-
 function useToast() {
   const [state, setState] = React.useState<State>(memoryState)
 
@@ -179,7 +178,7 @@ function useToast() {
         listeners.splice(index, 1)
       }
     }
-  }, [state])
+  }, []) // ✅ Tableau vide - l'effet s'exécute une seule fois au montage
 
   return {
     ...state,
@@ -187,5 +186,6 @@ function useToast() {
     dismiss: (toastId?: string) => dispatch({ type: "DISMISS_TOAST", toastId }),
   }
 }
+
 
 export { useToast, toast }
