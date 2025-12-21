@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import {
   Home,
   Building2,
@@ -288,6 +289,25 @@ function ServiceCard({ icon: Icon, title, description, image, features, index }:
 }
 
 export default function ServicesContent() {
+  const [, location] = useLocation();
+
+  // Scroll automatique si l'URL contient un hash (ex: /services#business-services-heading)
+  useEffect(() => {
+    const hash = typeof window !== "undefined" ? window.location.hash : "";
+    if (!hash) return;
+
+    const id = hash.replace("#", "");
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    // Petit délai pour laisser l'animation / rendu se produire, puis scroll avec offset
+    setTimeout(() => {
+      const headerOffset = 80; // ajuster si vous avez un header fixe plus grand/petit
+      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: elementPosition - headerOffset, behavior: "smooth" });
+    }, 120);
+  }, [location]);
+
   return (
     <div className="space-y-20 lg:space-y-28">
       {/* Section Services à Domicile */}

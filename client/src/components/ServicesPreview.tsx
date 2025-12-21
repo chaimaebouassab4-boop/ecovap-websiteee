@@ -149,6 +149,9 @@ function ServiceCard({ category, index }: { category: typeof serviceCategories[0
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
   const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [-5, 0, 5]);
 
+  // Détermination de la cible avec fragment (hash)
+  const target = index === 0 ? "/services#home-services-heading" : "/services#business-services-heading";
+
   return (
     <motion.div
       ref={cardRef}
@@ -328,7 +331,7 @@ function ServiceCard({ category, index }: { category: typeof serviceCategories[0
             })}
           </ul>
 
-          <Link href="/services">
+          <Link href={target}>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Button 
                 className={`w-full group relative overflow-hidden bg-gradient-to-r ${category.gradient} text-white border-none shadow-lg hover:shadow-xl transition-all duration-300`}

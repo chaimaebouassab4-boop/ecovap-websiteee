@@ -209,21 +209,7 @@ export default function Header() {
             
 
             {/* Bouton Contact principal */}
-            <Link href="/contact">
-              <Button
-                className="
-                  group relative overflow-hidden bg-[#011f4b] hover:bg-[#03396c] 
-                  text-white px-6 py-2.5 rounded-full font-bold
-                  transition-all duration-300 shadow-lg hover:shadow-xl
-                  transform hover:scale-105 flex items-center gap-2
-                "
-                data-testid="button-header-contact"
-              >
-                <Droplets className="w-4 h-4" />
-                <span>Contactez-nous</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
-              </Button>
-            </Link>
+           
           </div>
 
 <Link href="/contact">
