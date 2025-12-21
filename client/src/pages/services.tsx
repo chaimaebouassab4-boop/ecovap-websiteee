@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import PageHeader from "@/components/PageHeader";
+import CreativePageHeader from "@/components/CreativePageHeader";
 import ServicesContent from "@/components/ServicesContent";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
@@ -357,7 +357,7 @@ export default function Services() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <PageHeader
+        <CreativePageHeader
           title="Nos Services"
           description="Solutions complètes de nettoyage et désinfection à la vapeur sèche pour particuliers et professionnels."
           backgroundImage="/testimonials/serrrrrrrr.jpg"
