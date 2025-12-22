@@ -74,7 +74,7 @@ export default function ContactForm() {
         telephone_client: values.telephone,
         message: values.message,
       };
-
+   
       // Send using EmailJS with the public key as the 4th argument
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY);
 
