@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Shield, Leaf, Sparkles } from "lucide-react";
 import { useState } from "react";
 
-const heroImage = "/attached_assets/generated_images/office_steam_cleaning_scene.png";
+const heroImage = "/attached_assets/generated_images/office_steam_cleaning_scene.webp";
 
 export default function Hero() {
   const [particles, setParticles] = useState<{ id: number; x: number; y: number }[]>([]);
