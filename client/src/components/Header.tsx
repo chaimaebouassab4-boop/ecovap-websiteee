@@ -165,7 +165,7 @@ export default function Header() {
           </nav>
 
           {/* Boutons d'action */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2">
             {/* Bouton Témoignages */}
             <a
               href="/#temoignages"
@@ -173,12 +173,12 @@ export default function Header() {
             >
               <Button
                 variant="outline"
-                className="
-                  group relative overflow-hidden border-2 border-[#2596be] bg-transparent
-                  hover:bg-[#2596be] text-[#03396c] hover:text-white 
-                  transition-all duration-300 flex items-center gap-2 px-5 py-2.5
-                  rounded-full font-semibold
-                "
+               className="
+            group relative overflow-hidden bg-white text-[#005b96]
+            hover:bg-gray-50 border-2 border-[#005b96]
+            transition-all duration-300 flex items-center gap-2 px-5 py-2.5
+            rounded-full font-semibold shadow-sm hover:shadow-md transform hover:scale-105
+          "
                 data-testid="button-header-temoignages"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -194,12 +194,12 @@ export default function Header() {
             >
               <Button
                 variant="outline"
-                className="
-                  group relative overflow-hidden bg-gradient-to-r from-[#005b96] to-[#2596be]
-                  hover:from-[#03396c] hover:to-[#005b96] text-white 
-                  border-none transition-all duration-300 flex items-center gap-2 px-5 py-2.5
-                  rounded-full font-semibold shadow-md hover:shadow-lg transform hover:scale-105
-                "
+               className="
+            group relative overflow-hidden bg-gradient-to-r from-[#005b96] to-[#2596be]
+            hover:from-[#03396c] hover:to-[#005b96] text-white 
+            border-none transition-all duration-300 flex items-center gap-2 px-5 py-2.5
+            rounded-full font-semibold shadow-md hover:shadow-lg transform hover:scale-105
+          "
                 data-testid="button-header-transformations"
               >
                 <Sparkles className="w-4 h-4" />
@@ -207,26 +207,26 @@ export default function Header() {
               </Button>
             </a>
             
-
-            {/* Bouton Contact principal */}
-           
-          </div>
-
 <Link href="/contact">
   <Button
     variant="outline"
-    className="
-     group relative overflow-hidden bg-gradient-to-r from-[#005b96] to-[#2596be]
-                  hover:from-[#03396c] hover:to-[#005b96] text-white 
-                  border-none transition-all duration-300 flex items-center gap-2 px-5 py-2.5
-                  rounded-full font-semibold shadow-md hover:shadow-lg transform hover:scale-105
-    "
+      className="
+            group relative overflow-hidden bg-gradient-to-r from-[#005b96] to-[#2596be]
+            hover:from-[#03396c] hover:to-[#005b96] text-white 
+            border-none transition-all duration-300 flex items-center gap-2 px-5 py-2.5
+            rounded-full font-semibold shadow-md hover:shadow-lg transform hover:scale-105
+          "
     data-testid="button-header-devis"
   >
     <FileText className="w-4 h-4" />
     <span>Obtenir votre devis</span>
   </Button>
 </Link>
+            {/* Bouton Contact principal */}
+           
+          </div>
+
+
 
           {/* Bouton menu mobile */}
           <Button
