@@ -47,29 +47,23 @@ const residentialImage =
 /* ============================= DONNÉES CONTENU ============================= */
 const values = [
   {
-    icon: Target,
-    title: "Notre Mission",
-    description:
-      "Offrir des solutions de nettoyage innovantes et écologiques qui garantissent une hygiène parfaite tout en préservant l'environnement et la santé de nos clients.",
-    image: "/services/action.jpg",
-    color: "from-[#011f4b] to-[#03396c]",
+    icon: Leaf,
+    title: "Écologique",
+    description: "Nous utilisons uniquement des solutions de nettoyage respectueuses de l'environnement.",
+    gradient: "from-emerald-500 to-teal-600"
   },
   {
-    icon: Lightbulb,
-    title: "Innovation",
-    description:
-      "Nous utilisons la technologie de pointe de la vapeur sèche, une méthode révolutionnaire qui élimine 100% des germes sans produits chimiques.",
-    image: "/services/menage 4.jpg",
-    color: "from-[#005b96] to-[#2596be]",
+    icon: Shield,
+    title: "Fiabilité",
+    description: "Un service professionnel et ponctuel sur lequel vous pouvez compter.",
+    gradient: "from-blue-500 to-cyan-600"
   },
   {
-    icon: Heart,
-    title: "Engagement",
-    description:
-      "Notre équipe est dédiée à fournir un service de qualité exceptionnelle, avec professionnalisme et respect de vos espaces.",
-    image: "/services/engagement.jpg",
-    color: "from-[#2596be] to-[#6497b1]",
-  },
+    icon: Award,
+    title: "Excellence",
+    description: "Des résultats impeccables grâce à notre technologie de pointe.",
+    gradient: "from-purple-500 to-pink-600"
+  }
 ];
 
 const stats = [
@@ -274,7 +268,7 @@ export default function AboutContent() {
       </section>
 
       {/* ============================= YouTube + Services ============================= */}
-      <section className="py-8" aria-labelledby="demo-heading">
+      <section className="py-6" aria-labelledby="demo-heading">
         <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -420,7 +414,7 @@ export default function AboutContent() {
 
       {/* ============================= Stats ============================= */}
       <section
-        className="bg-gradient-to-r from-[#011f4b]/5 to-[#2596be]/5 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-12 rounded-xl border border-[#2596be]/10"
+        className="bg-gradient-to-r from-[#011f4b]/5 to-[#2596be]/5 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-8 rounded-xl border border-[#2596be]/10"
         aria-labelledby="stats-heading"
       >
         <h2 id="stats-heading" className="sr-only">
@@ -449,8 +443,10 @@ export default function AboutContent() {
       </section>
 
       {/* ============================= Valeurs ============================= */}
-      <section aria-labelledby="values-heading">
-        <div className="text-center mb-16">
+    <section aria-labelledby="values-heading" className="py-8 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* En-tête */}
+        <div className="text-center mb-10">
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
             whileInView={{ scale: 1, rotate: 0 }}
@@ -467,7 +463,7 @@ export default function AboutContent() {
               <img
                 src="/attached_assets/EcoVapLoGo.png"
                 alt="EcoVap Logo"
-                className="w-16 h-16 object-contain relative z-10"
+                className="w-20 h-20 object-contain relative z-10"
               />
             </div>
           </motion.div>
@@ -478,7 +474,7 @@ export default function AboutContent() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             id="values-heading"
-            className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-[#011f4b] to-[#005b96] bg-clip-text text-transparent"
+            className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-[#011f4b] to-[#005b96] bg-clip-text text-transparent"
           >
             Nos Valeurs
           </motion.h2>
@@ -488,13 +484,14 @@ export default function AboutContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
             Les principes qui guident notre travail au quotidien.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Cartes des valeurs - Design moderne avec backgrounds */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {values.map((value, index) => {
             const IconComponent = value.icon;
             return (
@@ -503,74 +500,88 @@ export default function AboutContent() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2, duration: 0.6 }}
-                whileHover={{ y: -10 }}
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+                transition={{ delay: index * 0.15, duration: 0.6 }}
+                className="group relative"
               >
-                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-[#6497b1]/20 to-[#2596be]/20">
-                  <div className={`absolute inset-0 bg-gradient-to-t ${value.color} opacity-80`} />
-                  <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: index * 0.3,
-                    }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  >
-                    <div className="relative">
-                      <motion.div
-                        animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        className="absolute inset-0 bg-white rounded-full blur-xl"
-                      />
-                      <div className="relative bg-white/20 backdrop-blur-sm p-4 rounded-2xl border border-white/30">
-                        <IconComponent className="w-12 h-12 text-white" strokeWidth={1.5} />
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#011f4b] mb-3 group-hover:text-[#005b96] transition-colors">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">{value.description}</p>
-                </div>
-
+                {/* Carte avec background dégradé */}
                 <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "100%" }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 + 0.5, duration: 0.8 }}
-                  className={`h-1 bg-gradient-to-r ${value.color}`}
-                />
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="relative h-full rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500"
+                >
+                  {/* Background dégradé animé */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-90`}>
+                    <motion.div
+                      animate={{ 
+                        backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
+                      }}
+                      transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                      className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent"
+                      style={{ backgroundSize: "200% 200%" }}
+                    />
+                  </div>
+
+                  {/* Motif décoratif */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
+                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-white rounded-full blur-2xl transform -translate-x-1/2 translate-y-1/2" />
+                  </div>
+
+                  {/* Contenu */}
+                  <div className="relative z-10 p-8 h-full flex flex-col">
+                    {/* Icône */}
+                    <motion.div
+                      animate={{ 
+                        y: [0, -8, 0],
+                        rotate: [0, 5, -5, 0]
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: index * 0.3,
+                      }}
+                      className="mb-6"
+                    >
+                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm border-2 border-white/30 shadow-lg">
+                        <IconComponent className="w-8 h-8 text-white" strokeWidth={2} />
+                      </div>
+                    </motion.div>
+
+                    {/* Texte */}
+                    <h3 className="text-2xl font-bold text-white mb-4 drop-shadow-md">
+                      {value.title}
+                    </h3>
+                    <p className="text-white/90 text-base leading-relaxed drop-shadow-sm flex-1">
+                      {value.description}
+                    </p>
+
+                    {/* Indicateur décoratif */}
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "60px" }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.15 + 0.5, duration: 0.8 }}
+                      className="mt-6 h-1 bg-white rounded-full shadow-md"
+                    />
+                  </div>
+
+                  {/* Effet de brillance au survol */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "100%" }}
+                    transition={{ duration: 0.8 }}
+                  />
+                </motion.div>
               </motion.div>
             );
           })}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="mt-16 text-center"
-        >
-          <motion.div
-            animate={{ rotate: [0, 5, -5, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="inline-block"
-          >
-            <img
-              src="/attached_assets/EcoVapLoGo.png"
-              alt="EcoVap"
-              className="w-12 h-12 object-contain opacity-20 hover:opacity-40 transition-opacity"
-            />
-          </motion.div>
-        </motion.div>
-      </section>
+      
+      </div>
+    </section>
 
       {/* ============================= Technologie Vapeur Sèche ============================= */}
       <section
@@ -635,31 +646,42 @@ export default function AboutContent() {
       </section>
 
       {/* ============================= Équipe ============================= */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-center bg-gradient-to-r from-[#011f4b]/5 to-[#2596be]/5 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-12 rounded-xl border border-[#2596be]/10"
-        aria-labelledby="team-heading"
-      >
-        <motion.div
-          whileHover={{ scale: 1.1, rotate: 5 }}
-          className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-[#005b96] to-[#2596be] mb-6"
-        >
-          <Users className="w-8 h-8 text-white" />
-        </motion.div>
+     <motion.section
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="relative text-center -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16 rounded-xl border border-[#2596be]/20 overflow-hidden"
+  aria-labelledby="team-heading"
+  style={{
+backgroundImage: `url('https://bds-proprete.com/wp-content/uploads/2025/03/worker-vapor-cleaning-a-matress1.jpg')`, // ← Image n°15    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  }}
+>
+  {/* Overlay semi-transparent pour améliorer la lisibilité du texte */}
+  <div className="absolute inset-0 bg-gradient-to-r from-[#011f4b]/70 to-[#2596be]/70" />
 
-        <h2 id="team-heading" className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-          Une Équipe Professionnelle
-        </h2>
+  {/* Contenu centré avec z-index */}
+  <div className="relative z-10">
+    <motion.div
+      whileHover={{ scale: 1.1, rotate: 5 }}
+      className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-[#005b96] to-[#2596be] mb-6 mx-auto"
+    >
+      <Users className="w-8 h-8 text-white" />
+    </motion.div>
 
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Notre équipe de techniciens qualifiés à Tanger est formée aux dernières techniques de nettoyage
-          à la vapeur sèche. Nous garantissons un service professionnel, ponctuel et respectueux de vos espaces,
-          pour un résultat propre, sain et durable.
-        </p>
-      </motion.section>
+    <h2 id="team-heading" className="text-3xl sm:text-4xl font-bold text-white mb-4">
+      Une Équipe Professionnelle
+    </h2>
+
+    <p className="text-lg text-white/90 max-w-2xl mx-auto">
+      Notre équipe de techniciens qualifiés à Tanger est formée aux dernières techniques de nettoyage
+      à la vapeur sèche. Nous garantissons un service professionnel, ponctuel et respectueux de vos espaces,
+      pour un résultat propre, sain et durable.
+    </p>
+  </div>
+</motion.section>
     </div>
     </motion.div>
   );

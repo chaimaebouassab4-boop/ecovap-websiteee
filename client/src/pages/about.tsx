@@ -11,7 +11,14 @@ export default function About() {
   const backgroundImage = "/testimonials/vitre2.jpg";
 
   useEffect(() => {
-    // Pré-charger l'image avant l'animation
+    // Méthode 1: Précharger avec <link rel="preload">
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = backgroundImage;
+    document.head.appendChild(link);
+
+    // Méthode 2: Pré-charger l'image en JavaScript
     const img = new Image();
     img.src = backgroundImage;
     
@@ -23,11 +30,23 @@ export default function About() {
       // Même en cas d'erreur, on affiche la page pour éviter un blocage
       setImageLoaded(true);
     };
-  }, []);
+
+    // Cleanup
+    return () => {
+      if (document.head.contains(link)) {
+        document.head.removeChild(link);
+      }
+    };
+  }, [backgroundImage]);
 
   return (
     <div className="min-h-screen flex flex-col overflow-hidden">
       <Header />
+      
+      {/* Image invisible pour forcer le cache navigateur */}
+      <div className="hidden" aria-hidden="true">
+        <img src={backgroundImage} alt="" />
+      </div>
       
       {/* Affiche la page seulement quand l'image est chargée */}
       {imageLoaded ? (
@@ -53,11 +72,12 @@ export default function About() {
           <CTASection />
         </motion.main>
       ) : (
-        // Loading state optionnel - vous pouvez personnaliser ou retirer
-        <div className="flex-1 flex items-center justify-center bg-gray-50">
+        // Loading state - fond blanc pour éviter le flash noir
+        <div className="flex-1 flex items-center justify-center bg-white">
           <div className="text-center">
-            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
-            <p className="mt-4 text-gray-600">Chargement...</p>
+            {/* Spinner animé */}
+            <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-green-600 border-r-transparent"></div>
+            <p className="mt-4 text-gray-700 font-medium">Chargement...</p>
           </div>
         </div>
       )}

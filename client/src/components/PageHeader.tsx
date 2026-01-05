@@ -4,6 +4,8 @@ interface PageHeaderProps {
   title: string;
   description?: string;
   backgroundImage?: string;
+    style?: React.CSSProperties;  // Add this line to accept style prop
+
 }
 
 export default function PageHeader({ title, description, backgroundImage }: PageHeaderProps) {
