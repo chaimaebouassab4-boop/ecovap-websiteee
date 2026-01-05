@@ -23,15 +23,13 @@ import { SiYoutube } from "react-icons/si";
 /* ============================= HERO (strip columns) ============================= */
 // Remplace ces chemins par tes vraies images (WebP/JPG/AVIF optimisés)
 const HERO_IMAGES = [
-  "/images/steam-01.jpg",
-  "/images/steam-02.jpg",
-  "/images/steam-03.jpg",
-  "/images/steam-04.jpg",
-  "/images/steam-05.jpg",
-  "/images/steam-06.jpg",
-  "/images/steam-07.jpg",
-  "/images/steam-08.jpg",
-  "/images/steam-09.jpg",
+  "/images/1200x1200.jpg",
+  "/images/beforeaftersofa-copy.jpg",
+  "/images/how-to-steam-clean-a-couch.jpg",
+  "/images/lesavantages-d-un-nettoyage-a-la-vapeur.jpg",     // french title, lowercased + kebab-case
+  "/images/steamer-applications-1.webp",
+  "/images/vapore-negozio-1.jpg",
+  // you can add more later if you have additional hero-style images
 ];
 
 const certifications = [
