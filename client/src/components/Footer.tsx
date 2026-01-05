@@ -104,7 +104,20 @@ eco.cleaners.tng.info@gmail.com
           </div>
         </div>
 
-      
+       <div className="border-t border-gray-700 pt-8">
+  <p className="text-center text-sm text-gray-400">
+    © 2026 EcoVap Tanger. Site conçu et développé par{' '}
+    <a 
+      href="https://wa.me/212632724789" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-[#2596be] hover:underline font-medium transition-colors"
+    >
+      BOUASSAB Chaimae
+    </a>. Tous droits réservés.
+  </p>
+</div>
+
       </div>
     </footer>
   );
