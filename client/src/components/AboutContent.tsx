@@ -1,7 +1,6 @@
 // app/(site)/AboutContent.tsx
 "use client";
 
-
 import { motion } from "framer-motion";
 import {
   Target,
@@ -23,13 +22,13 @@ import { SiYoutube } from "react-icons/si";
 /* ============================= HERO (strip columns) ============================= */
 // Remplace ces chemins par tes vraies images (WebP/JPG/AVIF optimisés)
 const HERO_IMAGES = [
-  "/images/1200x1200.jpg",
-  "/images/beforeaftersofa-copy.jpg",
-  "/images/how-to-steam-clean-a-couch.jpg",
-  "/images/lesavantages-d-un-nettoyage-a-la-vapeur.jpg",     // french title, lowercased + kebab-case
-  "/images/steamer-applications-1.webp",
-  "/images/vapore-negozio-1.jpg",
-  // you can add more later if you have additional hero-style images
+  "/testimonials/IMG-20251208-WA0033.jpg",
+  "/testimonials/IMG-20251208-WA0038.jpg",
+  "/testimonials/IMG-20251208-WA0054.jpg",
+  "/testimonials/IMG-20251208-WA0029.jpg",
+  "/services/IMG-20251208-WA0059.jpg",
+  "/testimonials/IMG-20251208-WA0037.jpg",
+  "/testimonials/IMG-20251208-WA0008.jpg",
 ];
 
 const certifications = [
@@ -40,8 +39,10 @@ const certifications = [
 ];
 
 /* ============================= RESSOURCES IMAGES ============================= */
-const steamImage = "/attached_assets/generated_images/steam_cleaning_technology_closeup.png";
-const residentialImage = "/attached_assets/generated_images/residential_cleaning_service.png";
+const steamImage =
+  "/attached_assets/generated_images/steam_cleaning_technology_closeup.png";
+const residentialImage =
+  "/attached_assets/generated_images/residential_cleaning_service.png";
 
 /* ============================= DONNÉES CONTENU ============================= */
 const values = [
@@ -72,7 +73,12 @@ const values = [
 ];
 
 const stats = [
-  { value: "100%", label: "Bactéries éliminées", icon: ShieldCheck, color: "text-green-500" },
+  {
+    value: "100%",
+    label: "Bactéries éliminées",
+    icon: ShieldCheck,
+    color: "text-green-500",
+  },
   { value: "0", label: "Produits chimiques", icon: Leaf, color: "text-emerald-500" },
   { value: "40min", label: "Séchage textiles", icon: Clock, color: "text-blue-500" },
   { value: "Expertise", label: "Professionnelle", icon: Award, color: "text-amber-500" },
@@ -83,7 +89,8 @@ const servicesYoutube = [
   {
     icon: Sparkles,
     title: "Nettoyage",
-    description: "Canapés, Matelas, Chaises, Tapis, Moquettes, Rideaux et plus encore.",
+    description:
+      "Canapés, Matelas, Chaises, Tapis, Moquettes, Rideaux et plus encore.",
     color: "text-blue-500",
     bgColor: "bg-blue-50",
     borderColor: "border-blue-200",
@@ -91,7 +98,8 @@ const servicesYoutube = [
   {
     icon: Shield,
     title: "Désinfection",
-    description: "Élimination des acariens, punaises de lit, bactéries, puces et moisissures.",
+    description:
+      "Élimination des acariens, punaises de lit, bactéries, puces et moisissures.",
     color: "text-green-500",
     bgColor: "bg-green-50",
     borderColor: "border-green-200",
@@ -99,7 +107,8 @@ const servicesYoutube = [
   {
     icon: Bug,
     title: "Désinsectisation",
-    description: "Traitement intérieur et extérieur contre cafards, fourmis et autres insectes.",
+    description:
+      "Traitement intérieur et extérieur contre cafards, fourmis et autres insectes.",
     color: "text-orange-500",
     bgColor: "bg-orange-50",
     borderColor: "border-orange-200",
@@ -118,30 +127,31 @@ export default function AboutContent() {
                    px-4 sm:px-6 lg:px-8 py-10 sm:py-12"
         aria-labelledby="hero-title"
       >
-        <div className="relative h-[340px] sm:h-[420px] lg:h-[460px] rounded-3xl overflow-hidden">
+        <div className="relative h-[500px] sm:h-[580px] lg:h-[620px] rounded-3xl overflow-hidden">
           {/* Bande d'images en colonnes */}
           <div className="absolute inset-0 flex gap-3 sm:gap-4 px-3 sm:px-4 items-stretch">
             {HERO_IMAGES.map((src, i) => (
-              <div
-                key={src + i}
-                className={[
-                  "relative h-full overflow-hidden rounded-[22px] border border-[#2596be]/20 shadow-sm",
-                  i % 7 === 0
-                    ? "w-[12%] sm:w-[10%]"
-                    : i % 5 === 0
-                    ? "w-[22%] sm:w-[18%]"
-                    : i % 3 === 0
-                    ? "w-[16%] sm:w-[14%]"
-                    : "w-[14%] sm:w-[12%]",
-                ].join(" ")}
+              <div 
+                key={`${src}-${i}`}
+              className={[
+  "relative h-full overflow-hidden rounded-[22px] border border-[#2596be]/20 shadow-sm",
+  i % 7 === 0
+    ? "w-[14%] sm:w-[12%]"
+    : i % 5 === 0
+    ? "w-[26%] sm:w-[22%]"
+    : i % 3 === 0
+    ? "w-[18%] sm:w-[16%]"
+    : "w-[16%] sm:w-[14%]",
+].join(" ")}
+
               >
                 <img
                   src={src}
                   alt=""
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                {/* Overlay bleu clair pour homogénéiser les visuels */}
-                <div className="absolute inset-0 bg-[#2596be]/14 mix-blend-multiply" />
+                {/* Overlay bleu clair plus léger pour mieux voir les images */}
+                <div className="absolute inset-0 bg-[#2596be]/8 mix-blend-multiply" />
                 <div className="absolute inset-0 ring-1 ring-white/40" />
               </div>
             ))}
@@ -151,38 +161,26 @@ export default function AboutContent() {
           <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-32 bg-gradient-to-r from-[#f0f8ff] to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-32 bg-gradient-to-l from-[#f0f8ff] to-transparent" />
 
-          {/* Texte au centre */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center px-4">
-              <h1
-                id="hero-title"
-                className="text-4xl sm:text-5xl font-extrabold tracking-tight
-                           bg-gradient-to-r from-[#011f4b] to-[#005b96] bg-clip-text text-transparent drop-shadow"
-              >
-                EcoVap Tanger
-              </h1>
-              <p className="mt-2 sm:mt-3 text-lg sm:text-2xl text-[#03396c]">
-                L&apos;Art du Nettoyage Écologique
-              </p>
+          {/* Overlay gradient subtil pour meilleure lisibilité du texte */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-transparent" />
 
-              {/* Badges / CTA */}
-              <div className="mt-5 sm:mt-6 flex flex-wrap gap-3 justify-center">
-                {certifications.map((cert, index) => (
-                  <div
-                    key={index}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur border border-[#2596be]/30 text-[#03396c] text-sm shadow"
-                  >
-                    <cert.icon className="w-4 h-4 text-[#005b96]" />
-                    <span>{cert.label}</span>
-                  </div>
-                ))}
-                <a
-                  href="#contact"
-                  className="px-5 py-2.5 rounded-full bg-[#2596be] hover:bg-[#005b96] text-white text-sm font-medium shadow"
-                >
-                  Obtenir votre devis
-                </a>
-              </div>
+          {/* Texte au centre */}
+          <div className="absolute inset-0 flex items-start justify-center pt-12 sm:pt-16 lg:pt-20">
+            <div className="text-center px-4">
+              <motion.h1
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                id="hero-title"
+                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-3"
+              >
+               
+              </motion.h1>
+
+         
+
+              {/* Badges */}
+              
             </div>
           </div>
         </div>
@@ -191,27 +189,67 @@ export default function AboutContent() {
         <div className="mt-8 h-px w-full bg-gradient-to-r from-transparent via-[#2596be]/30 to-transparent" />
       </section>
 
+      <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="mt-8 sm:mt-10 flex flex-wrap gap-3 justify-center items-center"
+              >
+                  <a
+                  href="#contact"
+                  className="inline-block px-8 py-3.5 rounded-full bg-gradient-to-r from-[#2596be] to-[#005b96] hover:from-[#005b96] hover:to-[#011f4b] text-white text-base font-semibold shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                >
+                  Obtenir votre devis
+                </a>
+                {certifications.map((cert, index) => (
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/95 backdrop-blur-md border border-[#2596be]/40 text-[#03396c] text-sm font-medium shadow-lg hover:shadow-xl transition-all"
+                  >
+                    <cert.icon className="w-4 h-4 text-[#005b96]" />
+                    <span>{cert.label}</span>
+                   
+                  </motion.div>
+                  
+                ))}
+              </motion.div>
+
+
       {/* ============================= Qui Sommes-Nous ============================= */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" aria-labelledby="mission-heading">
+      <section
+        className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+        aria-labelledby="mission-heading"
+      >
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 id="mission-heading" className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+
+          <h2
+            id="mission-heading"
+            className="text-3xl sm:text-4xl font-bold text-foreground mb-6"
+          >
             Qui Sommes-Nous ?
           </h2>
           <p className="text-lg text-muted-foreground mb-4">
-            EcoVap est une entreprise spécialisée dans le nettoyage, la désinfection et la désinsectisation à Tanger.
-            Nous sommes pionniers dans l&apos;utilisation de la technologie de vapeur sèche au Maroc.
+            EcoVap est une entreprise spécialisée dans le nettoyage, la désinfection
+            et la désinsectisation à Tanger. Nous sommes pionniers dans
+            l&apos;utilisation de la technologie de vapeur sèche au Maroc.
           </p>
           <p className="text-muted-foreground mb-6">
-            Notre approche innovante permet d&apos;éliminer efficacement les bactéries, virus, acariens et parasites sans
-            utiliser de produits chimiques nocifs. Cette méthode respectueuse de l&apos;environnement garantit des
-            résultats exceptionnels tout en préservant la santé de nos clients.
+            Notre approche innovante permet d&apos;éliminer efficacement les bactéries,
+            virus, acariens et parasites sans utiliser de produits chimiques nocifs.
+            Cette méthode respectueuse de l&apos;environnement garantit des résultats
+            exceptionnels tout en préservant la santé de nos clients.
           </p>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -220,7 +258,11 @@ export default function AboutContent() {
           className="relative"
         >
           <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
-            <img src={residentialImage} alt="Service de nettoyage résidentiel EcoVap" className="w-full h-full object-cover" />
+            <img
+              src={residentialImage}
+              alt="Service de nettoyage résidentiel EcoVap"
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
       </section>
@@ -257,6 +299,7 @@ export default function AboutContent() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
+            {/* FIX: <a> complet */}
             <a
               href={`https://www.youtube.com/watch?v=${youtubeVideoId}`}
               target="_blank"
@@ -273,20 +316,25 @@ export default function AboutContent() {
                   }}
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300" />
-                <motion.div className="absolute inset-0 flex items-center justify-center" whileHover={{ scale: 1.1 }}>
+                <motion.div
+                  className="absolute inset-0 flex items-center justify-center"
+                  whileHover={{ scale: 1.1 }}
+                >
                   <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 group-hover:scale-110">
                     <Play className="w-8 h-8 text-white ml-1" fill="white" />
                   </div>
                 </motion.div>
                 <div className="absolute bottom-4 right-4 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-full">
                   <SiYoutube className="w-6 h-6 text-red-600" />
-                  <span className="text-sm font-medium text-gray-800">Voir la démo</span>
+                  <span className="text-sm font-medium text-gray-800">
+                    Voir la démo
+                  </span>
                 </div>
               </div>
             </a>
 
             <motion.a
-              href={"https://www.youtube.com/@EcoVapTanger"}
+              href="https://www.youtube.com/@EcoVapTanger"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -305,7 +353,10 @@ export default function AboutContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-[#011f4b] mb-6">Ce que nous faisons</h3>
+            <h3 className="text-2xl font-bold text-[#011f4b] mb-6">
+              Ce que nous faisons
+            </h3>
+
             <div className="space-y-4">
               {servicesYoutube.map((service, index) => (
                 <motion.div
@@ -321,7 +372,9 @@ export default function AboutContent() {
                     <service.icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#011f4b] mb-1 text-lg">{service.title}</h4>
+                    <h4 className="font-semibold text-[#011f4b] mb-1 text-lg">
+                      {service.title}
+                    </h4>
                     <p className="text-gray-600">{service.description}</p>
                   </div>
                 </motion.div>
@@ -342,12 +395,16 @@ export default function AboutContent() {
                 transition={{ duration: 0.6 }}
                 className="flex items-start gap-3"
               >
-                <motion.div animate={{ rotate: [0, 10, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
+                <motion.div
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
                   <Leaf className="w-6 h-6 text-green-500 shrink-0 mt-1" />
                 </motion.div>
                 <p className="text-[#03396c] leading-relaxed">
-                  <strong>100% Écologique</strong> - Tous nos services utilisent la technologie de vapeur sèche, sans aucun produit
-                  chimique. Résultats garantis et conformes aux normes AFNOR.
+                  <strong>100% Écologique</strong> — Tous nos services utilisent la
+                  technologie de vapeur sèche, sans aucun produit chimique. Résultats
+                  garantis et conformes aux normes AFNOR.
                 </p>
               </motion.div>
             </motion.div>
@@ -373,7 +430,10 @@ export default function AboutContent() {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="text-center"
             >
-              <motion.p whileHover={{ scale: 1.1 }} className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-[#005b96] to-[#2596be] bg-clip-text text-transparent mb-1">
+              <motion.p
+                whileHover={{ scale: 1.1 }}
+                className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-[#005b96] to-[#2596be] bg-clip-text text-transparent mb-1"
+              >
                 {stat.value}
               </motion.p>
               <p className="text-sm text-[#03396c] font-medium">{stat.label}</p>
@@ -398,7 +458,11 @@ export default function AboutContent() {
                 transition={{ duration: 2, repeat: Infinity }}
                 className="absolute inset-0 bg-gradient-to-r from-[#2596be] to-[#005b96] rounded-full blur-xl"
               />
-              <img src="/attached_assets/EcoVapLoGo.png" alt="EcoVap Logo" className="w-16 h-16 object-contain relative z-10" />
+              <img
+                src="/attached_assets/EcoVapLoGo.png"
+                alt="EcoVap Logo"
+                className="w-16 h-16 object-contain relative z-10"
+              />
             </div>
           </motion.div>
 
@@ -441,7 +505,12 @@ export default function AboutContent() {
                   <div className={`absolute inset-0 bg-gradient-to-t ${value.color} opacity-80`} />
                   <motion.div
                     animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: index * 0.3 }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: index * 0.3,
+                    }}
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                   >
                     <div className="relative">
@@ -483,28 +552,58 @@ export default function AboutContent() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="mt-16 text-center"
         >
-          <motion.div animate={{ rotate: [0, 5, -5, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="inline-block">
-            <img src="/attached_assets/EcoVapLoGo.png" alt="EcoVap" className="w-12 h-12 object-contain opacity-20 hover:opacity-40 transition-opacity" />
+          <motion.div
+            animate={{ rotate: [0, 5, -5, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="inline-block"
+          >
+            <img
+              src="/attached_assets/EcoVapLoGo.png"
+              alt="EcoVap"
+              className="w-12 h-12 object-contain opacity-20 hover:opacity-40 transition-opacity"
+            />
           </motion.div>
         </motion.div>
       </section>
 
       {/* ============================= Technologie Vapeur Sèche ============================= */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" aria-labelledby="tech-heading">
-        <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="order-2 lg:order-1">
+      <section
+        className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+        aria-labelledby="tech-heading"
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="order-2 lg:order-1"
+        >
           <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
-            <img src={steamImage} alt="Technologie de vapeur sèche EcoVap" className="w-full h-full object-cover" />
+            <img
+              src={steamImage}
+              alt="Technologie de vapeur sèche EcoVap"
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
-        <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="order-1 lg:order-2">
+
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="order-1 lg:order-2"
+        >
           <h2 id="tech-heading" className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
             La Technologie Vapeur Sèche
           </h2>
           <p className="text-muted-foreground mb-4">
-            La vapeur sèche est une technologie de nettoyage innovante qui utilise une vapeur à haute température (jusqu’à 180 °C)
-            avec un taux d’humidité très faible (moins de 5 %), garantissant une désinfection efficace sans mouiller les surfaces.
+            La vapeur sèche est une technologie de nettoyage innovante qui utilise une vapeur à
+            haute température (jusqu&apos;à 180&nbsp;°C) avec un taux d&apos;humidité très faible
+            (moins de 5&nbsp;%), garantissant une désinfection efficace sans mouiller les surfaces.
           </p>
           <p className="text-muted-foreground mb-6">Cette méthode permet de :</p>
+
           <ul className="space-y-3">
             {[
               "Éliminer 100% des bactéries et virus",
@@ -513,7 +612,14 @@ export default function AboutContent() {
               "Nettoyer sans mouiller les surfaces",
               "Préserver l'environnement sans produits chimiques",
             ].map((item, index) => (
-              <motion.li key={index} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="flex items-start gap-3">
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex items-start gap-3"
+              >
                 <CheckCircle className="w-5 h-5 text-[#005b96] shrink-0 mt-0.5" />
                 <span className="text-muted-foreground">{item}</span>
               </motion.li>
@@ -529,16 +635,23 @@ export default function AboutContent() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
         className="text-center bg-gradient-to-r from-[#011f4b]/5 to-[#2596be]/5 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-12 rounded-xl border border-[#2596be]/10"
+        aria-labelledby="team-heading"
       >
-        <motion.div whileHover={{ scale: 1.1, rotate: 5 }} className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-[#005b96] to-[#2596be] mb-6">
+        <motion.div
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-[#005b96] to-[#2596be] mb-6"
+        >
           <Users className="w-8 h-8 text-white" />
         </motion.div>
+
         <h2 id="team-heading" className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
           Une Équipe Professionnelle
         </h2>
+
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Notre équipe de techniciens qualifiés à Tanger est formée aux dernières techniques de nettoyage à la vapeur sèche. Nous
-          garantissons un service professionnel, ponctuel et respectueux de vos espaces, pour un résultat propre, sain et durable.
+          Notre équipe de techniciens qualifiés à Tanger est formée aux dernières techniques de nettoyage
+          à la vapeur sèche. Nous garantissons un service professionnel, ponctuel et respectueux de vos espaces,
+          pour un résultat propre, sain et durable.
         </p>
       </motion.section>
     </div>
