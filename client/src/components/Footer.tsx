@@ -22,7 +22,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#082025] text-gray-300" role="contentinfo">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="py-12 lg:py-16">
+<div className="py-6 lg:py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             <div>
               <Link href="/" className="flex items-center gap-2 mb-4" data-testid="link-footer-logo">
@@ -102,9 +102,7 @@ eco.cleaners.tng.info@gmail.com
 
             </div>
           </div>
-        </div>
-
-       <div className="border-t border-gray-700 pt-8">
+          <div className="border-t border-gray-700 pt-4 mt-4">
   <p className="text-center text-sm text-gray-400">
     © 2026 EcoVap Tanger. Site conçu et développé par{' '}
     <a 
@@ -117,6 +115,9 @@ eco.cleaners.tng.info@gmail.com
     </a>. Tous droits réservés.
   </p>
 </div>
+        </div>
+
+
 
       </div>
     </footer>

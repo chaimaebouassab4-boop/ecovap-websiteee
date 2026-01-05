@@ -120,6 +120,12 @@ const youtubeVideoId = "EeAYlscJ3lk";
 
 export default function AboutContent() {
   return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="space-y-16 lg:space-y-24"
+    >
     <div className="space-y-16 lg:space-y-24">
       {/* ============================= HERO (mosaïque colonnes) ============================= */}
       <section
@@ -655,5 +661,6 @@ export default function AboutContent() {
         </p>
       </motion.section>
     </div>
+    </motion.div>
   );
 }
