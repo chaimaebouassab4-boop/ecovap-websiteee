@@ -1,69 +1,34 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 export default function Contact() {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
   const formRef = useRef(null);
+  const socialRef = useRef(null);
 
-  // Précharger les images avant d'afficher le contenu
+  // Scroll vers la section appropriée selon le hash dans l'URL
   useEffect(() => {
-    const imagesToLoad = [
-      "/testimonials/devis.png",
-      "/attached_assets/EcoVapLoGo.png"
-    ];
-
-    let loadedCount = 0;
-
-    imagesToLoad.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-      
-      img.onload = () => {
-        loadedCount++;
-        if (loadedCount === imagesToLoad.length) {
-          setImagesLoaded(true);
-        }
-      };
-      
-      img.onerror = () => {
-        loadedCount++;
-        if (loadedCount === imagesToLoad.length) {
-          setImagesLoaded(true);
-        }
-      };
-    });
-  }, []);
-
-  // Scroll automatique vers le formulaire après chargement
-  useEffect(() => {
-    if (imagesLoaded && formRef.current) {
-      // Petit délai pour s'assurer que le rendu est complet
-      setTimeout(() => {
-        formRef.current?.scrollIntoView({ 
+    const hash = window.location.hash;
+    
+    // Petit délai pour s'assurer que le rendu est complet
+    setTimeout(() => {
+      if (hash === '#contact' && socialRef.current) {
+        // Si hash #contact, scroll vers réseaux sociaux
+        socialRef.current.scrollIntoView({ 
           behavior: 'smooth',
           block: 'start'
         });
-      }, 100);
-    }
-  }, [imagesLoaded]);
-
-  if (!imagesLoaded) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <div className="flex-1 flex items-center justify-center bg-gray-50">
-          <div className="text-center">
-            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
-            <p className="mt-4 text-gray-600">Chargement...</p>
-          </div>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
+      } else if (formRef.current) {
+        // Par défaut (avec ou sans #devis), scroll vers le formulaire
+        formRef.current.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }, 100);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -75,7 +40,7 @@ export default function Contact() {
         className="flex-1"
       >
         {/* Section Hero avec Image et Vidéo */}
-        <div className="relative w-full overflow-hidden">
+        <div ref={socialRef} className="relative w-full overflow-hidden">
           <div className="flex flex-col lg:flex-row items-stretch">
             {/* Left Section: Image */}
             <motion.div
@@ -104,7 +69,8 @@ export default function Contact() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-[600px] bg-gradient-to-br from-blue-600 via-cyan-500 to-blue-800 flex items-center justify-center overflow-hidden"
+              className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-[600px] flex items-center justify-center overflow-hidden"
+              style={{ backgroundColor: '#2596be' }}
             >
               {/* Animated Background Circles */}
               <div className="absolute inset-0 overflow-hidden">
@@ -129,7 +95,7 @@ export default function Contact() {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="text-white/90 mb-8 text-sm"
                 >
-                  Suivez-nous sur les réseaux sociaux pour découvrir nos transformations avant/après et les avis de nos clients 
+                  Suivez-nous sur les réseaux sociaux pour découvrir nos transformations avant/après et les avis de nos clients ✨
                 </motion.p>
 
                 {/* Social Media Cards */}
@@ -217,7 +183,7 @@ export default function Contact() {
                   transition={{ duration: 0.6, delay: 1 }}
                   className="mt-6 text-white/90 text-lg font-medium"
                 >
-                  Rejoignez des centaines de clients satisfaits ! 
+                  Rejoignez des centaines de clients satisfaits ! 🌟
                 </motion.p>
               </div>
             </motion.div>
