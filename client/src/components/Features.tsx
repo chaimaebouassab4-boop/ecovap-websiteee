@@ -28,7 +28,7 @@ const features = [
   },
   {
     icon: Target,
-    title: "Efficace",
+    title: "Résultats Garantis",
     description:
       "Élimine 100% des bactéries, acariens, parasites, même le COVID-19. Résultats garantis.",
     image: "/features/bac.png",
