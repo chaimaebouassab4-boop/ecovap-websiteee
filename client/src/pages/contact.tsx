@@ -95,7 +95,7 @@ export default function Contact() {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="text-white/90 mb-8 text-sm"
                 >
-                  Suivez-nous sur les réseaux sociaux pour découvrir nos transformations avant/après et les avis de nos clients ✨
+                  Suivez-nous sur les réseaux sociaux pour découvrir nos transformations avant/après et les avis de nos clients ...
                 </motion.p>
 
                 {/* Social Media Cards */}
@@ -183,7 +183,7 @@ export default function Contact() {
                   transition={{ duration: 0.6, delay: 1 }}
                   className="mt-6 text-white/90 text-lg font-medium"
                 >
-                  Rejoignez des centaines de clients satisfaits ! 🌟
+                  Rejoignez des centaines de clients satisfaits ! 
                 </motion.p>
               </div>
             </motion.div>

@@ -19,7 +19,7 @@ export default defineConfig({
         ]
       : []),
   ],
-  base: "/",
+  base: "/", // Assure que les chemins des assets partent de la racine
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -29,7 +29,8 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    // MODIFIÉ : On génère tout directement dans /dist pour Hostinger
+    outDir: path.resolve(import.meta.dirname, "dist"), 
     emptyOutDir: true,
   },
   server: {
