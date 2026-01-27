@@ -26,6 +26,17 @@ import caca from "./images/caca.png";
 import papa from "./images/papa.png";
 import ts from "./images/ts.png";
 import tsts from "./images/tsts.png";
+import koko from "./images/zazazazazaza.jpeg";
+import lolo from "./images/rererererererere.jpeg";
+import hhh from "./images/booo.jpeg";
+import nn from "./images/fgrgrgrg.jpeg";
+import th from "./images/th.jpeg";
+import xz from "./images/xz.jpeg";
+import sd from "./images/sdsd.png";
+
+import avannta from "./images/avanta.png";
+
+import hh from "./images/sasasasa.jpeg";
 
 const beforeAfterExamples = [
   {
@@ -35,11 +46,32 @@ const beforeAfterExamples = [
     description: "Redonnez vie à vos canapés en tissu",
     category: "canape"
   },
+   {
+    title: "Nettoyage de Canapé",
+    before: nn,
+    after: hhh,
+    description: "Résultats professionnels",
+    category: "canape"
+  },
+    {
+    title: "Nettoyage de Canapé",
+    before: avannta,
+    after: koko,
+    description: "Textiles purifiés et désinfectés",
+    category: "canape"
+  },
   {
     title: "Nettoyage de Canapé",
     before: caca,
     after: papa,
-    description: "Élimination des taches tenaces",
+    description: "Canapés impeccables en un instant",
+    category: "canape"
+  },
+    {
+    title: "Nettoyage de Canapé",
+    before: sd,
+    after: xz,
+    description: "Propreté éclatante garantie",
     category: "canape"
   },
   {
@@ -88,9 +120,26 @@ const beforeAfterExamples = [
     title: "Nettoyage de Canapé",
     before: ts,
     after: tsts,
+    description: "Fraîcheur retrouvée",
+    category: "canape"
+  },
+    {
+    title: "Nettoyage de Canapé",
+    before: lolo,
+    after: hh,
     description: "Résultats professionnels",
     category: "canape"
   },
+    {
+    title: "Nettoyage de Tapis",
+    before: th,
+    after: th,
+    description: "Nettoyage en profondeur",
+    category: "tapis"
+  },
+
+  
+
 ];
 
 function BeforeAfter() {
