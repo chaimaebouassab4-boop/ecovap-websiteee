@@ -15,34 +15,35 @@ const features = [
     stats: { value: "", unit: "démontage", label: "Gain de temps" },
     highlights: ["Pas de déplacement", "Pas de risque", "Gain de temps"]
   },
-  {
-    icon: Clock,
-    title: "Rapide",
-    description:
-      "Espaces utilisables immédiatement après nettoyage.Séchage des textiles en 50 minutes et remise en service des espaces en moins de 1h30.",
-    image: "/features/pspspsp.png",
-    imageAlt: "Chronomètre digital affichant 40 minutes avec vapeur en arrière-plan",
-    gradient: "from-[#2596be] to-[#6497b1]",
-    stats: { value: "", unit: "minutes", label: "Séchage textiles" },
-    highlights: ["Séchage rapide", "Utilisation immédiate", "Productivité maintenue"]
-  },
-  {
+    {
     icon: Target,
     title: "Résultats Garantis",
     description:
       "Élimine 100% des bactéries, acariens, parasites, même le COVID-19. Résultats garantis.",
-    image: "/features/bac.png",
+    image: "/features/bacttt.png",
     imageAlt: "Visualisation microscopique de l'élimination des bactéries par la vapeur",
     gradient: "from-[#03396c] to-[#005b96]",
     stats: { value: "", unit: "", label: "Élimination garantie" },
     highlights: ["Anti-bactérien", "Anti-acariens", "Anti-COVID"]
   },
   {
+    icon: Clock,
+    title: "Efficace",
+    description:
+      "Espaces utilisables immédiatement après nettoyage.Séchage des textiles en 50 minutes et remise en service des espaces en moins de 1h30.",
+    image: "/features/rapido.png",
+    imageAlt: "Chronomètre digital affichant 40 minutes avec vapeur en arrière-plan",
+    gradient: "from-[#2596be] to-[#6497b1]",
+    stats: { value: "", unit: "minutes", label: "Séchage textiles" },
+    highlights: ["Séchage rapide", "Utilisation immédiate", "Productivité maintenue"]
+  },
+
+  {
     icon: Award,
     title: "Conforme AFNOR",
     description:
       "Technologie vapeur sèche respectant la norme AFNOR pour milieux médicaux, collectifs et alimentaires (HACCP).",
-    image: "/features/norm.png",
+    image: "/features/afnore.png",
     imageAlt: "Logos de certification AFNOR et HACCP avec équipement professionnel",
     gradient: "from-[#011f4b] to-[#03396c]",
     stats: { value: "AFNOR", unit: "", label: "Certification officielle" },
