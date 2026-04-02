@@ -33,6 +33,47 @@ export function log(message: string, source = "express") {
   console.log(`${formattedTime} [${source}] ${message}`);
 }
 
+function listenWithPortFallback(initialPort: number, host: string) {
+  const hasExplicitPort = Boolean(process.env.PORT);
+  const maxAttempts = hasExplicitPort ? 1 : 20;
+  let port = initialPort;
+  let attempts = 0;
+
+  const tryListen = () => {
+    attempts += 1;
+
+    const cleanup = () => {
+      httpServer.off("error", handleError);
+      httpServer.off("listening", handleListening);
+    };
+
+    const handleListening = () => {
+      cleanup();
+      log(`serving on port ${port}`);
+    };
+
+    const handleError = (error: NodeJS.ErrnoException) => {
+      cleanup();
+
+      if (error.code === "EADDRINUSE" && attempts < maxAttempts) {
+        const nextPort = port + 1;
+        log(`port ${port} is busy, retrying on ${nextPort}`);
+        port = nextPort;
+        tryListen();
+        return;
+      }
+
+      throw error;
+    };
+
+    httpServer.once("error", handleError);
+    httpServer.once("listening", handleListening);
+    httpServer.listen(port, host);
+  };
+
+  tryListen();
+}
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -86,8 +127,6 @@ app.use((req, res, next) => {
   // It is the only port that is not firewalled.
 
   const port = parseInt(process.env.PORT || "5000", 10);
-httpServer.listen(port, "127.0.0.1", () => {
-  log(`serving on port ${port}`);
-});
+  listenWithPortFallback(port, "127.0.0.1");
 
 })();

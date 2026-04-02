@@ -1,7 +1,7 @@
 // app/(site)/AboutContent.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Award,
   Leaf,
@@ -15,26 +15,27 @@ import {
   Clock,
 } from "lucide-react";
 import { SiYoutube } from "react-icons/si";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 /* ============================= HERO IMAGES ============================= */
 const HERO_IMAGES = [
-  "/testimonials/IMG-20251208-WA0033.jpg",
-  "/testimonials/IMG-20251208-WA0038.jpg",
-  "/testimonials/IMG-20251208-WA0054.jpg",
-  "/testimonials/IMG-20251208-WA0029.jpg",
-  "/services/IMG-20251208-WA0059.jpg",
-  "/testimonials/IMG-20251208-WA0037.jpg",
-  "/testimonials/IMG-20251208-WA0008.jpg",
+  { src: "/testimonials/IMG-20251208-WA0033.jpg", tag: "Canapés",      caption: "Nettoyage canapé vapeur sèche" },
+  { src: "/testimonials/IMG-20251208-WA0038.jpg", tag: "Matelas",      caption: "Désinfection matelas & acariens" },
+  { src: "/testimonials/IMG-20251208-WA0054.jpg", tag: "Tapis",        caption: "Nettoyage tapis et moquettes" },
+  { src: "/testimonials/IMG-20251208-WA0029.jpg", tag: "Résidentiel",  caption: "Entretien domicile — Tanger" },
+  { src: "/services/IMG-20251208-WA0059.jpg",     tag: "Commercial",   caption: "Locaux professionnels" },
+  { src: "/testimonials/IMG-20251208-WA0037.jpg", tag: "Désinfection", caption: "Élimination bactéries & virus" },
+  { src: "/testimonials/IMG-20251208-WA0008.jpg", tag: "Résultat",     caption: "Avant / Après EcoVap" },
 ];
 
 const certifications = [
-  { icon: Award, label: "Conforme AFNOR" },
-  { icon: Shield, label: "Certification HACCP" },
-  { icon: Leaf, label: "100% Écologique" },
+  { icon: Award,       label: "Conforme AFNOR" },
+  { icon: Shield,      label: "Certification HACCP" },
+  { icon: Leaf,        label: "100% Écologique" },
   { icon: CheckCircle, label: "Qualité Garantie" },
 ];
 
-const steamImage = "/attached_assets/generated_images/steam_cleaning_technology_closeup.png";
+const steamImage       = "/attached_assets/generated_images/steam_cleaning_technology_closeup.png";
 const residentialImage = "/attached_assets/generated_images/residential_cleaning_service.png";
 
 const values = [
@@ -59,10 +60,10 @@ const values = [
 ];
 
 const stats = [
-  { value: "100%", label: "Bactéries éliminées", icon: ShieldCheck },
-  { value: "0", label: "Produits chimiques", icon: Leaf },
-  { value: "40min", label: "Séchage textiles", icon: Clock },
-  { value: "Expertise", label: "Professionnelle", icon: Award },
+  { value: "100%",      label: "Bactéries éliminées", icon: ShieldCheck },
+  { value: "0",         label: "Produits chimiques",  icon: Leaf },
+  { value: "40min",     label: "Séchage textiles",    icon: Clock },
+  { value: "Expertise", label: "Professionnelle",     icon: Award },
 ];
 
 const servicesYoutube = [
@@ -94,63 +95,238 @@ const servicesYoutube = [
 
 const youtubeVideoId = "EeAYlscJ3lk";
 
-/* ============================= MARQUEE COMPONENT (CSS keyframes) ============================= */
-function InfiniteMarquee() {
-  // Duplicate array so we can loop seamlessly (translateX -50% = one full set)
-  const images = [...HERO_IMAGES, ...HERO_IMAGES];
+/* ============================= PORTFOLIO SLIDER ============================= */
+function ImageCarousel() {
+  const [current, setCurrent] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const dragStart = useRef({ x: 0, scroll: 0 });
+  const isDragging = useRef(false);
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const n = HERO_IMAGES.length;
+
+  // Scroll track so active slide is centred
+  const scrollToSlide = useCallback((index: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const slides = Array.from(track.querySelectorAll<HTMLElement>(".gs-slide"));
+    const slide = slides[index];
+    if (!slide) return;
+    const trackRect = track.getBoundingClientRect();
+    const slideRect = slide.getBoundingClientRect();
+    const offset =
+      slideRect.left - trackRect.left - (trackRect.width - slideRect.width) / 2;
+    track.scrollBy({ left: offset, behavior: "smooth" });
+  }, []);
+
+  const goTo = useCallback(
+    (i: number) => {
+      const clamped = ((i % n) + n) % n; // wrap around
+      setCurrent(clamped);
+      scrollToSlide(clamped);
+      // reset autoplay
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+      autoplayRef.current = setInterval(() => {
+        setCurrent((prev) => {
+          const next = (prev + 1) % n;
+          scrollToSlide(next);
+          return next;
+        });
+      }, 5000);
+    },
+    [n, scrollToSlide]
+  );
+
+  // Autoplay
+  useEffect(() => {
+    autoplayRef.current = setInterval(() => {
+      setCurrent((prev) => {
+        const next = (prev + 1) % n;
+        scrollToSlide(next);
+        return next;
+      });
+    }, 5000);
+    return () => { if (autoplayRef.current) clearInterval(autoplayRef.current); };
+  }, [n, scrollToSlide]);
+
+  // Mouse drag
+  const onMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    dragStart.current = { x: e.clientX, scroll: trackRef.current!.scrollLeft };
+    if (trackRef.current) trackRef.current.style.cursor = "grabbing";
+  };
+  useEffect(() => {
+    const onMove = (e: MouseEvent) => {
+      if (!isDragging.current || !trackRef.current) return;
+      trackRef.current.scrollLeft = dragStart.current.scroll - (e.clientX - dragStart.current.x);
+    };
+    const onUp = (e: MouseEvent) => {
+      if (!isDragging.current) return;
+      isDragging.current = false;
+      if (trackRef.current) trackRef.current.style.cursor = "grab";
+      const dx = e.clientX - dragStart.current.x;
+      if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
+    };
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+    return () => { window.removeEventListener("mousemove", onMove); window.removeEventListener("mouseup", onUp); };
+  }, [current, goTo]);
+
+  // Touch swipe
+  const touchStart = useRef(0);
 
   return (
-    <>
-      <style>{`
-        @keyframes ecovap-marquee {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .ecovap-marquee-track {
-          display: flex;
-          gap: 16px;
-          width: max-content;
-          animation: ecovap-marquee 22s linear infinite;
-          will-change: transform;
-        }
-        .ecovap-marquee-track:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+    <div className="select-none">
+      {/* Label */}
+      <p className="text-xs font-medium tracking-widest uppercase text-[#2596be]/70 mb-6 px-4 sm:px-8 lg:px-16">
+        Nos Réalisations · {n} photos
+      </p>
 
-      <div
-        className="relative overflow-hidden w-full"
-        aria-hidden="true"
-        style={{
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
-          maskImage:
-            "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
-        }}
-      >
-        <div className="ecovap-marquee-track">
-          {images.map((src, i) => (
-            <div
-              key={`${i}-${src}`}
-              className="flex-shrink-0 rounded-2xl overflow-hidden border border-[#2596be]/20 shadow-md bg-[#eaf5fb]"
-              style={{ width: "260px", height: "340px" }}
+      {/* Track — full bleed, no max-width */}
+      <div className="overflow-hidden">
+        <div
+          ref={trackRef}
+          className="gs-track flex items-center gap-4 overflow-x-auto py-8 px-[10vw]"
+          style={{
+            scrollSnapType: "x mandatory",
+            WebkitOverflowScrolling: "touch",
+            cursor: "grab",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+          onMouseDown={onMouseDown}
+          onTouchStart={(e) => { touchStart.current = e.touches[0].clientX; }}
+          onTouchEnd={(e) => {
+            const dx = e.changedTouches[0].clientX - touchStart.current;
+            if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
+          }}
+        >
+          <style>{`.gs-track::-webkit-scrollbar{display:none}`}</style>
+
+        {HERO_IMAGES.map((img, i) => {
+          const diff = i - current;
+          const isActive   = diff === 0;
+          const isAdjacent = Math.abs(diff) === 1;
+
+          const scale      = isActive ? 1    : isAdjacent ? 0.87 : 0.76;
+          const opacity    = isActive ? 1    : isAdjacent ? 0.65 : 0.35;
+          const brightness = isActive ? 1    : isAdjacent ? 0.82 : 0.65;
+
+          // Alternate widths for portfolio rhythm
+          const baseW = [300, 380, 260, 340, 300, 360, 280][i % 7];
+
+          return (
+            <motion.div
+              key={i}
+              className="gs-slide flex-none relative overflow-hidden"
+              style={{
+                width: baseW,
+                height: 260,
+                scrollSnapAlign: "center",
+                borderRadius: 20,
+                border: "0.5px solid rgba(0,0,0,0.08)",
+                flexShrink: 0,
+              }}
+              animate={{ scale, opacity, filter: `brightness(${brightness})` }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              onClick={() => !isDragging.current && goTo(i)}
             >
               <img
-                src={src}
-                alt=""
+                src={img.src}
+                alt={img.caption}
+                className="w-full h-full object-cover pointer-events-none"
                 draggable={false}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                  display: "block",
-                }}
               />
-            </div>
+
+              {/* gradient overlay */}
+              <div
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(to top, rgba(1,31,75,0.65) 0%, transparent 55%)" }}
+              />
+
+              {/* tag pill */}
+              <span
+                className="absolute top-3 left-3 text-white text-xs font-semibold px-3 py-1"
+                style={{
+                  background: "rgba(37,150,190,0.35)",
+                  backdropFilter: "blur(8px)",
+                  borderRadius: 20,
+                  border: "0.5px solid rgba(255,255,255,0.3)",
+                }}
+              >
+                {img.tag}
+              </span>
+
+              {/* caption — only on active */}
+              <AnimatePresence>
+                {isActive && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 right-0 px-4 py-3"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <p className="text-white text-sm font-semibold leading-snug drop-shadow">
+                      {img.caption}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* active ring */}
+              {isActive && (
+                <motion.div
+                  className="absolute inset-0 rounded-[20px] pointer-events-none"
+                  style={{ boxShadow: "0 0 0 2px rgba(37,150,190,0.7)" }}
+                  layoutId="activeRing"
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                />
+              )}
+            </motion.div>
+          );
+          })}
+        </div>
+      </div>
+
+      {/* Nav row */}
+      <div className="flex items-center justify-between mt-4 px-4 sm:px-8 lg:px-16">
+        {/* Dots */}
+        <div className="flex items-center gap-1.5">
+          {HERO_IMAGES.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className="h-1.5 rounded-full transition-all duration-300"
+              style={{
+                width: i === current ? 22 : 6,
+                background: i === current ? "#2596be" : "rgba(37,150,190,0.25)",
+              }}
+              aria-label={`Photo ${i + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Counter */}
+        <span className="text-sm text-[#2596be]/60 font-medium tabular-nums">
+          {current + 1} / {n}
+        </span>
+
+        {/* Arrows */}
+        <div className="flex gap-2">
+          {([-1, 1] as const).map((dir) => (
+            <button
+              key={dir}
+              onClick={() => goTo(current + dir)}
+              className="w-10 h-10 rounded-full flex items-center justify-center text-[#005b96] transition-all duration-150 hover:bg-[#2596be]/10 active:scale-95"
+              style={{ border: "1.5px solid rgba(37,150,190,0.3)" }}
+              aria-label={dir === -1 ? "Précédent" : "Suivant"}
+            >
+              {dir === -1 ? "←" : "→"}
+            </button>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -165,13 +341,13 @@ export default function AboutContent() {
     >
       <div className="space-y-16 lg:space-y-24">
 
-        {/* ===== HERO — MARQUEE INFINI ===== */}
+        {/* ===== HERO — PORTFOLIO SLIDER ===== */}
         <section
-          className="relative overflow-hidden rounded-3xl bg-[#f0f8ff] -mx-4 sm:-mx-6 lg:-mx-8 py-10 sm:py-14"
+          className="relative overflow-hidden rounded-3xl bg-white -mx-4 sm:-mx-6 lg:-mx-8 py-10 sm:py-14"
           aria-labelledby="hero-title"
         >
-          <InfiniteMarquee />
-          <div className="mt-8 mx-4 sm:mx-6 lg:mx-8 h-px bg-gradient-to-r from-transparent via-[#2596be]/30 to-transparent" />
+          <ImageCarousel />
+          <div className="mt-8 mx-4 sm:mx-6 lg:mx-8 h-px bg-[#2596be]/25" />
         </section>
 
         {/* ===== CTA + CERTIFICATIONS ===== */}
